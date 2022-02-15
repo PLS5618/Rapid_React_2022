@@ -1,0 +1,37 @@
+// Copyright (c) FIRST and other WPILib contributors.
+// Open Source Software; you can modify and/or share it under the terms of
+// the WPILib BSD license file in the root directory of this project.
+
+package frc.robot.subsystems;
+
+import com.revrobotics.CANSparkMax;
+import com.revrobotics.CANSparkMaxLowLevel.MotorType;
+
+import edu.wpi.first.wpilibj.drive.DifferentialDrive;
+import edu.wpi.first.wpilibj.motorcontrol.MotorControllerGroup;
+import edu.wpi.first.wpilibj2.command.SubsystemBase;
+
+public class DriveTrain extends SubsystemBase {
+
+  private CANSparkMax m_avantdroit = new CANSparkMax(0, MotorType.kBrushless);
+  private CANSparkMax m_avantgauche = new CANSparkMax(0, MotorType.kBrushless);
+  private CANSparkMax m_arrieredroit = new CANSparkMax(0, MotorType.kBrushless);
+  private CANSparkMax m_arrieregauche = new CANSparkMax(0, MotorType.kBrushless);
+
+  private MotorControllerGroup m_droit = new MotorControllerGroup(m_avantdroit, m_arrieredroit);
+  private MotorControllerGroup m_gauche = new MotorControllerGroup(m_avantgauche, m_arrieregauche);
+
+  private DifferentialDrive m_drive = new DifferentialDrive(m_gauche, m_droit);
+
+  public void Drive(double xSpeed, double zRotation) {
+    m_drive.arcadeDrive(xSpeed, zRotation);
+  }
+
+  /** Creates a new DriveTrain. */
+  public DriveTrain() {}
+
+  @Override
+  public void periodic() {
+    // This method will be called once per scheduler run
+  }
+}
