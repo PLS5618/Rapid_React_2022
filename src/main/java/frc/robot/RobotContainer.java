@@ -20,21 +20,21 @@ public class RobotContainer {
   // The robot's subsystems and commands are defined here...
   public XboxController m_Controller = new XboxController(0);
 
-  public DriveTrain m_dDriveTrain = new DriveTrain(); 
+  public DriveTrain m_DriveTrain = new DriveTrain(); 
 
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
     // Configure the button bindings
     configureButtonBindings();
 
-    m_dDriveTrain.setDefaultCommand(
+    m_DriveTrain.setDefaultCommand(
       new RunCommand(
         new Runnable() {
           @Override
           public void run() {
-            m_dDriveTrain.Drive(m_Controller.getLeftY(), m_Controller.getLeftX());
+            m_DriveTrain.Drive(m_Controller.getLeftY(), m_Controller.getLeftX());
           }
-        }, m_dDriveTrain)
+        }, m_DriveTrain)
     );
   }
 
