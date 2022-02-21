@@ -12,6 +12,8 @@ public class Elevateur extends SubsystemBase {
   /** Creates a new elevateur. */
   private AnalogPotentiometer potentiometreDroit = new AnalogPotentiometer(0);
   private AnalogPotentiometer potentiometreGauche = new AnalogPotentiometer(0);
+  //moteur
+  private CANSparkMax m_mat1 = new CANSparkMax(0, MotorType.brushless);
 private DigitalInput m_limit1 = new DigitalInput(0);
 private DigitalInput m_limit2 = new DigitalInput(0);
 private DigitalInput m_limit3 = new DigitalInput(0);
