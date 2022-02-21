@@ -8,8 +8,7 @@ import com.revrobotics.CANSparkMax;
 import com.revrobotics.CANSparkMaxLowLevel.MotorType;
 
 import edu.wpi.first.wpilibj.DigitalInput;
-import edu.wpi.first.wpilibj.motorcontrol.MotorController;
-import edu.wpi.first.wpilibj.motorcontrol.MotorControllerGroup;
+
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class Accumulateur extends SubsystemBase {
@@ -20,15 +19,18 @@ public class Accumulateur extends SubsystemBase {
   private DigitalInput m_limitswitchavant = new DigitalInput(0);
   private DigitalInput m_limitswitcharriere = new DigitalInput(0);
   
-  
-
-  {
-    
+  public void tournerAvant(double vitesse) {
+    m_shaftavant.set (vitesse);
   }
-    {
-
+  public void tournerArriere(double vitesse) {
+    m_shaftarriere.set (vitesse);
   }
-
+  public boolean ballonAvant(){
+   return m_limitswitchavant.get();
+  } 
+  public boolean ballonArriere(){
+    return m_limitswitcharriere.get();
+  }
   @Override
   public void periodic() {
     // This method will be called once per scheduler run
