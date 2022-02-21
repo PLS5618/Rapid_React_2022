@@ -20,10 +20,10 @@ public class Elevateur extends SubsystemBase {
   private CANSparkMax m_mat1 = new CANSparkMax(0, MotorType.kBrushless);
   private CANSparkMax m_mat2 = new CANSparkMax(0, MotorType.kBrushless);
   // Limit Switch
-private DigitalInput m_limit1 = new DigitalInput(0);
-private DigitalInput m_limit2 = new DigitalInput(0);
-private DigitalInput m_limit3 = new DigitalInput(0);
-private DigitalInput m_limit4 = new DigitalInput(0);
+  private DigitalInput m_limit1 = new DigitalInput(0);
+  private DigitalInput m_limit2 = new DigitalInput(0);
+  private DigitalInput m_limit3 = new DigitalInput(0);
+  private DigitalInput m_limit4 = new DigitalInput(0);
 
   @Override
   public void periodic() {
