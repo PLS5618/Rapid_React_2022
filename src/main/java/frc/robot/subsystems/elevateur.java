@@ -5,13 +5,17 @@
 package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.AnalogPotentiometer;
+import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class Elevateur extends SubsystemBase {
   /** Creates a new elevateur. */
-  private AnalogPotentiometer PotentiometreDroit = new AnalogPotentiometer(0);
-  private AnalogPotentiometer PotentiometreGauche = new AnalogPotentiometer(0);
-
+  private AnalogPotentiometer potentiometreDroit = new AnalogPotentiometer(0);
+  private AnalogPotentiometer potentiometreGauche = new AnalogPotentiometer(0);
+private DigitalInput m_limit1 = new DigitalInput(0);
+private DigitalInput m_limit2 = new DigitalInput(0);
+private DigitalInput m_limit3 = new DigitalInput(0);
+private DigitalInput m_limit4 = new DigitalInput(0);
 
   @Override
   public void periodic() {
