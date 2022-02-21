@@ -4,16 +4,22 @@
 
 package frc.robot.subsystems;
 
+import com.revrobotics.CANSparkMax;
+import com.revrobotics.CANSparkMaxLowLevel.MotorType;
+
 import edu.wpi.first.wpilibj.AnalogPotentiometer;
 import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class Elevateur extends SubsystemBase {
   /** Creates a new elevateur. */
+  // potentiometre
   private AnalogPotentiometer potentiometreDroit = new AnalogPotentiometer(0);
   private AnalogPotentiometer potentiometreGauche = new AnalogPotentiometer(0);
-  //moteur
-  private CANSparkMax m_mat1 = new CANSparkMax(0, MotorType.brushless);
+  // moteur
+  private CANSparkMax m_mat1 = new CANSparkMax(0, MotorType.kBrushless);
+  private CANSparkMax m_mat2 = new CANSparkMax(0, MotorType.kBrushless);
+  // Limit Switch
 private DigitalInput m_limit1 = new DigitalInput(0);
 private DigitalInput m_limit2 = new DigitalInput(0);
 private DigitalInput m_limit3 = new DigitalInput(0);
