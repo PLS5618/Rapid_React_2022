@@ -9,7 +9,8 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class Elevateur extends SubsystemBase {
   /** Creates a new elevateur. */
-  private AnalogPotentiometer m = new AnalogPotentiometer(0);
+  private AnalogPotentiometer PotentiometreDroit = new AnalogPotentiometer(0);
+  private AnalogPotentiometer PotentiometreGauche = new AnalogPotentiometer(0);
 
 
   @Override
