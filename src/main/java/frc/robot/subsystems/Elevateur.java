@@ -24,9 +24,15 @@ public class Elevateur extends SubsystemBase {
   private DigitalInput m_limit2 = new DigitalInput(0);
   private DigitalInput m_limit3 = new DigitalInput(0);
   private DigitalInput m_limit4 = new DigitalInput(0);
+  public void monteDescendre(double vitesse) {
+    m_mat1.set (vitesse);
+    m_mat2.set (vitesse);
+  }
+
 
   @Override
   public void periodic() {
     // This method will be called once per scheduler run
   }
 }
+»
