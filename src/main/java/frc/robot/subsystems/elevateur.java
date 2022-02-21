@@ -4,11 +4,13 @@
 
 package frc.robot.subsystems;
 
+import edu.wpi.first.wpilibj.AnalogPotentiometer;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
-public class elevateur extends SubsystemBase {
+public class Elevateur extends SubsystemBase {
   /** Creates a new elevateur. */
-  public elevateur() {}
+  private AnalogPotentiometer m = new AnalogPotentiometer(0);
+
 
   @Override
   public void periodic() {
