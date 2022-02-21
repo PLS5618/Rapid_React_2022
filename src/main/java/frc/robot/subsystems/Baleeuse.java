@@ -11,8 +11,8 @@ import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.motorcontrol.MotorControllerGroup;
 public class Baleeuse extends SubsystemBase {
   private CANSparkMax m_Tourneshaft = new CANSparkMax(0, MotorType.kBrushless);
-   final DoubleSolenoid  m_pourstart = new DoubleSolenoid(0, 1);
-  
+   final DoubleSolenoid  m_pourstartdroit = new DoubleSolenoid(1, 2);
+   final DoubleSolenoid  m_pourstartgauche = new DoubleSolenoid(3, 4);
   /** Creates a new baleeuse. */
   public Baleeuse() {}
 
