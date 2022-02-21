@@ -7,15 +7,18 @@ package frc.robot.subsystems;
 import com.revrobotics.CANSparkMax;
 import com.revrobotics.CANSparkMaxLowLevel.MotorType;
 
+import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.motorcontrol.MotorController;
 import edu.wpi.first.wpilibj.motorcontrol.MotorControllerGroup;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class Accumulateur extends SubsystemBase {
-  private
+
   /** Creates a new Accumulateur. */
   private CANSparkMax m_shaftavant = new CANSparkMax(0, MotorType.kBrushless);
   private CANSparkMax m_shaftarriere = new CANSparkMax (0, MotorType.kBrushless);
+  private DigitalInput m_limitswitchavant = new DigitalInput(0);
+  private DigitalInput m_limitswitcharriere = new DigitalInput(0);
   
   
 
