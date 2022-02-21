@@ -5,15 +5,20 @@
 package frc.robot.subsystems;
 
 import com.revrobotics.CANSparkMax;
+import com.revrobotics.CANSparkMaxLowLevel.MotorType;
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import edu.wpi.first.wpilibj.DoubleSolenoid;
-import edu.wpi.first.wpilibj.motorcontrol.MotorControllerGroup;
+import edu.wpi.first.wpilibj.PneumaticsModuleType;
+
 public class Baleeuse extends SubsystemBase {
   private CANSparkMax m_Tourneshaft = new CANSparkMax(0, MotorType.kBrushless);
-   final DoubleSolenoid  m_pourstartdroit = new DoubleSolenoid(1, 2);
-   final DoubleSolenoid  m_pourstartgauche = new DoubleSolenoid(3, 4);
+   private DoubleSolenoid  m_pourstartdroit = new DoubleSolenoid(PneumaticsModuleType.CTREPCM, 1, 2);
+   private DoubleSolenoid  m_pourstartgauche = new DoubleSolenoid(PneumaticsModuleType.CTREPCM, 3, 4);
   /** Creates a new baleeuse. */
+  public void tourneshaft(double vitesse) {
+    m_Tourneshaft.set (vitesse);
+  }
   public Baleeuse() {}
 
   @Override
