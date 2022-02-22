@@ -11,9 +11,10 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.PneumaticsModuleType;
 import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
+import edu.wpi.first.wpilibj.motorcontrol.Talon;
 
 public class Baleeuse extends SubsystemBase {
-  private CANSparkMax m_Tourneshaft = new CANSparkMax(0, MotorType.kBrushless);
+  private TalonSRX m_Tourneshaft = new TalonSRX(0, MotorType.kBrushless);
    private DoubleSolenoid  m_pourstartdroit = new DoubleSolenoid(PneumaticsModuleType.CTREPCM, 1, 2);
    private DoubleSolenoid  m_pourstartgauche = new DoubleSolenoid(PneumaticsModuleType.CTREPCM, 3, 4);
   /** Creates a new baleeuse. */
