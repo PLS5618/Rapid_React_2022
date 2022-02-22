@@ -19,14 +19,21 @@ public class Elevateur extends SubsystemBase {
   // moteur
   private CANSparkMax m_mat1 = new CANSparkMax(0, MotorType.kBrushless);
   private CANSparkMax m_mat2 = new CANSparkMax(0, MotorType.kBrushless);
+  public void monteDescendre(double vitesse) {
+    m_mat1.set (vitesse);
+    m_mat2.set (vitesse);
+  }
   // Limit Switch
   private DigitalInput m_limit1 = new DigitalInput(0);
   private DigitalInput m_limit2 = new DigitalInput(0);
   private DigitalInput m_limit3 = new DigitalInput(0);
   private DigitalInput m_limit4 = new DigitalInput(0);
-  public void monteDescendre(double vitesse) {
-    m_mat1.set (vitesse);
-    m_mat2.set (vitesse);
+  public boolean haut(){
+    return m_limit1.get() ||  m_limit2.get();
+  }
+
+  public boolean bas(){
+    return m_limit3.get() || m_limit4.get();
   }
 
 
@@ -35,4 +42,3 @@ public class Elevateur extends SubsystemBase {
     // This method will be called once per scheduler run
   }
 }
-»
