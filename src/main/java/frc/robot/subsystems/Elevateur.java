@@ -38,7 +38,12 @@ public class Elevateur extends SubsystemBase {
   public boolean bas(){
     return m_limit3.get() || m_limit4.get();
   }
-
+  public void slut(){
+  potentiometreDroit.get ();
+  }
+  public void slut1(){
+    potentiometreGauche.get ();
+    }
 
   @Override
   public void periodic() {
