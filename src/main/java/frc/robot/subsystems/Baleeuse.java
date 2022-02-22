@@ -4,22 +4,23 @@
 
 package frc.robot.subsystems;
 
-import com.revrobotics.CANSparkMax;
-import com.revrobotics.CANSparkMaxLowLevel.MotorType;
+import com.ctre.phoenix.motorcontrol.ControlMode;
+import com.ctre.phoenix.motorcontrol.can.TalonSRX;
+
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.PneumaticsModuleType;
 import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
-import edu.wpi.first.wpilibj.motorcontrol.Talon;
+
 
 public class Baleeuse extends SubsystemBase {
-  private TalonSRX m_Tourneshaft = new TalonSRX(0, MotorType.kBrushless);
+  private TalonSRX m_Tourneshaft = new TalonSRX(0);
    private DoubleSolenoid  m_pourstartdroit = new DoubleSolenoid(PneumaticsModuleType.CTREPCM, 1, 2);
    private DoubleSolenoid  m_pourstartgauche = new DoubleSolenoid(PneumaticsModuleType.CTREPCM, 3, 4);
   /** Creates a new baleeuse. */
   public void tourneshaft(double vitesse) {
-    m_Tourneshaft.set (vitesse);
+    m_Tourneshaft.set (ControlMode.PercentOutput, vitesse);
   }
   public void monter() {
     m_pourstartdroit.set(Value.kReverse);
