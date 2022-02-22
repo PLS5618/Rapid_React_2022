@@ -10,6 +10,7 @@ import com.revrobotics.CANSparkMaxLowLevel.MotorType;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.PneumaticsModuleType;
+import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
 
 public class Baleeuse extends SubsystemBase {
   private CANSparkMax m_Tourneshaft = new CANSparkMax(0, MotorType.kBrushless);
@@ -18,6 +19,15 @@ public class Baleeuse extends SubsystemBase {
   /** Creates a new baleeuse. */
   public void tourneshaft(double vitesse) {
     m_Tourneshaft.set (vitesse);
+  }
+  public void monter() {
+    m_pourstartdroit.set(Value.kReverse);
+    m_pourstartgauche.set(Value.kReverse);
+    
+  }
+  public void decendre() {
+    m_pourstartdroit.set(Value.kForward);
+    m_pourstartgauche.set(Value.kForward);
   }
   public Baleeuse() {}
 
