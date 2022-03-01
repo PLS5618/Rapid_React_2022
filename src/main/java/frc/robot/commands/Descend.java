@@ -5,29 +5,28 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
-import frc.robot.subsystems.Balayeuse;
+import frc.robot.subsystems.Elevateur;
 
-public class BalayeuseTourner extends CommandBase {
 
-  private Balayeuse m_balayeuse;
+public class Descend extends CommandBase {
 
-  /** Creates a new BalayeuseTourner. */
-  public BalayeuseTourner(Balayeuse balayeuse) {
+  private Elevateur m_elevateur; 
+
+  /** Creates a new Descend. */
+  public Descend(Elevateur elevateur) {
+    m_elevateur=elevateur;
     // Use addRequirements() here to declare subsystem dependencies.
-    m_balayeuse = balayeuse;
-    addRequirements(m_balayeuse);
+    addRequirements(m_elevateur);
   }
 
   // Called when the command is initially scheduled.
   @Override
-  public void initialize() {
-
-  }
+  public void initialize() {}
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    m_balayeuse.tourneshaft(0.5);
+    m_elevateur.monteDescendre(-0.5);
   }
 
   // Called once the command ends or is interrupted.
@@ -37,6 +36,6 @@ public class BalayeuseTourner extends CommandBase {
   // Returns true when the command should end.
   @Override
   public boolean isFinished() {
-    return false;
+    return m_elevateur.bas();
   }
 }
