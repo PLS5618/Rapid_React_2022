@@ -12,13 +12,14 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.PneumaticsModuleType;
 import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
+import static frc.robot.Constants.*;
 
 
 
 public class Balayeuse extends SubsystemBase {
-private TalonSRX m_Tourneshaft = new TalonSRX(0);
-   private DoubleSolenoid  m_pourstartdroit = new DoubleSolenoid(PneumaticsModuleType.CTREPCM, 1, 2);
-   private DoubleSolenoid  m_pourstartgauche = new DoubleSolenoid(PneumaticsModuleType.CTREPCM, 3, 4);
+private TalonSRX m_Tourneshaft = new TalonSRX(kShaftBalayeuse);
+   private DoubleSolenoid  m_pourstartdroit = new DoubleSolenoid(PneumaticsModuleType.CTREPCM, kBalayeusePiston1, kBalayeusePiston2);
+   private DoubleSolenoid  m_pourstartgauche = new DoubleSolenoid(PneumaticsModuleType.CTREPCM, kBalayeusePiston3, kBalayeusePiston4);
   /** Creates a new baleeuse. */
   public void tourneshaft(double vitesse) {
     m_Tourneshaft.set (ControlMode.PercentOutput, vitesse);
