@@ -13,10 +13,21 @@ package frc.robot;
  * constants are needed, to reduce verbosity.
  */
 public final class Constants {
+    // CAN
     public static int kShaftBalayeuse = 1;
+    public static int kAccumulateurShaftAv = 2;
+    public static int kAccumulateurShaftAr = 3;
+
+    // Analog
+
+    // DIO
     public static int kBalayeusePiston1 = 1;
     public static int kBalayeusePiston2 = 2;
     public static int kBalayeusePiston3 = 3;
     public static int kBalayeusePiston4 = 4;
+    public static int kAccumulateurBallonAv = 5;
+    public static int kAccumulateurBallonAr = 6;
+    
+    
     
 }
