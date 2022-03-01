@@ -17,6 +17,10 @@ public final class Constants {
     public static int kShaftBalayeuse = 1;
     public static int kAccumulateurShaftAv = 2;
     public static int kAccumulateurShaftAr = 3;
+    public static int kDriveTrainAvDr = 4;
+    public static int kDriveTrainAvGa = 5;
+    public static int kDriveTrainArDr = 6;
+    public static int kDriveTrainArGa = 7;
 
     // Analog
 
