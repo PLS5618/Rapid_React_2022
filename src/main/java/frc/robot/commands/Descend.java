@@ -7,13 +7,13 @@ package frc.robot.commands;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.subsystems.Elevateur;
 
-public class Reculer extends CommandBase {
 
-private Elevateur m_elevateur; 
+public class Descend extends CommandBase {
 
+  private Elevateur m_elevateur; 
 
-  /** Creates a new Reculer. */
-  public Reculer(Elevateur elevateur) {
+  /** Creates a new Descend. */
+  public Descend(Elevateur elevateur) {
     m_elevateur=elevateur;
     // Use addRequirements() here to declare subsystem dependencies.
     addRequirements(m_elevateur);
@@ -25,7 +25,9 @@ private Elevateur m_elevateur;
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
-  public void execute() {}
+  public void execute() {
+    m_elevateur.monteDescendre(-0.5);
+  }
 
   // Called once the command ends or is interrupted.
   @Override
@@ -34,6 +36,6 @@ private Elevateur m_elevateur;
   // Returns true when the command should end.
   @Override
   public boolean isFinished() {
-    return false;
+    return m_elevateur.bas();
   }
 }
