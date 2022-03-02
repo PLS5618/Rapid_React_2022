@@ -24,6 +24,8 @@ public final class Constants {
     public static int kDriveTrainArGa = 7;
     public static int kElevateurMoteur1 = 8;
     public static int kElevateurMoteur2 = 9;
+    public static int kLancer1 = 10;
+    public static int kLancer2 = 11;
 
     // Analog
     public static int kElevateurPotentiometreD = 1;
