@@ -6,6 +6,7 @@ package frc.robot.subsystems;
 
 import com.revrobotics.CANSparkMax;
 import com.revrobotics.CANSparkMaxLowLevel.MotorType;
+import static frc.robot.Constants.*;
 
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj.motorcontrol.MotorControllerGroup;
@@ -13,10 +14,10 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class DriveTrain extends SubsystemBase {
 
-  private CANSparkMax m_avantdroit = new CANSparkMax(0, MotorType.kBrushless);
-  private CANSparkMax m_avantgauche = new CANSparkMax(0, MotorType.kBrushless);
-  private CANSparkMax m_arrieredroit = new CANSparkMax(0, MotorType.kBrushless);
-  private CANSparkMax m_arrieregauche = new CANSparkMax(0, MotorType.kBrushless);
+  private CANSparkMax m_avantdroit = new CANSparkMax(kDriveTrainAvDr, MotorType.kBrushless);
+  private CANSparkMax m_avantgauche = new CANSparkMax(kDriveTrainAvGa, MotorType.kBrushless);
+  private CANSparkMax m_arrieredroit = new CANSparkMax(kDriveTrainArDr, MotorType.kBrushless);
+  private CANSparkMax m_arrieregauche = new CANSparkMax(kDriveTrainArGa, MotorType.kBrushless);
 
   private MotorControllerGroup m_droit = new MotorControllerGroup(m_avantdroit, m_arrieredroit);
   private MotorControllerGroup m_gauche = new MotorControllerGroup(m_avantgauche, m_arrieregauche);
