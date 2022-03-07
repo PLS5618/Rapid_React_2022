@@ -40,7 +40,7 @@ public final class Constants {
     public static int kElevateurLimitSwitch1 = 6;
     public static int kElevateurLimitSwitch2 = 7;
     public static int kElevateurLimitSwitch3 = 8;
-    public static int kElevateurLimitSwitch4 = 19;
+    public static int kElevateurLimitSwitch4 = 9;
     public static int kAccumulateurBallonAvG = 10;
     public static int kAccumulateurBallonArG = 11;
 
