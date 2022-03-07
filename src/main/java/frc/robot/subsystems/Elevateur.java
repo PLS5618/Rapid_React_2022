@@ -22,10 +22,10 @@ public class Elevateur extends SubsystemBase {
   private CANSparkMax m_mat2 = new CANSparkMax(kElevateurMoteur2, MotorType.kBrushless);
   
   // Limit Switch
-  private DigitalInput m_limithautd = new DigitalInput(kElevateurLimitSwitch1);
-  private DigitalInput m_limithautg = new DigitalInput(kElevateurLimitSwitch2);
-  private DigitalInput m_limitbasd = new DigitalInput(kElevateurLimitSwitch3);
-  private DigitalInput m_limitbasg = new DigitalInput(kElevateurLimitSwitch4);
+  private DigitalInput m_limithautd = new DigitalInput(kElevateurlimithautd);
+  private DigitalInput m_limithautg = new DigitalInput(kElevateurlimithautg);
+  private DigitalInput m_limitbasd = new DigitalInput(kElevateurlimitbasd);
+  private DigitalInput m_limitbasg = new DigitalInput(kElevateurlimitbasg);
   
   // function
   public void monteDescendre(double vitesse) {
