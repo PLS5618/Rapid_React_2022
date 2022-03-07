@@ -20,8 +20,10 @@ public class Accumulateur extends SubsystemBase {
   private TalonSRX m_shaftarriere = new TalonSRX(kAccumulateurShaftAr);
   private DigitalInput m_limitswitchavantG = new DigitalInput(kAccumulateurBallonAv);
   private DigitalInput m_limitswitcharriereG = new DigitalInput(kAccumulateurBallonAr);
-  private DigitalInput m_limitswitchavantD = new DigitalInput();
-  private DigitalInput m_limitswitcharriereD = new DigitalInput();
+  private DigitalInput m_limitswitchavantD = new DigitalInput(0);
+  private DigitalInput m_limitswitcharriereD = new DigitalInput(0);
+
+
   public void tournerAvant(double vitesse) {
     m_shaftavant.set (ControlMode.PercentOutput, vitesse);
   }
@@ -29,10 +31,10 @@ public class Accumulateur extends SubsystemBase {
     m_shaftarriere.set (ControlMode.PercentOutput,vitesse);
   }
   public boolean ballonAvant(){
-   return m_limitswitchavant.get();
+   return m_limitswitchavantG.get() || m_limitswitchavantD.get();
   } 
   public boolean ballonArriere(){
-    return m_limitswitcharriere.get();
+    return m_limitswitcharriereG.get() || m_limitswitcharriereD.get();
   }
   @Override
   public void periodic() {
