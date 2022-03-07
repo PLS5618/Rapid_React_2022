@@ -18,10 +18,10 @@ public class Accumulateur extends SubsystemBase {
   /** Creates a new Accumulateur. */
   private TalonSRX m_shaftavant = new TalonSRX(kAccumulateurShaftAv);
   private TalonSRX m_shaftarriere = new TalonSRX(kAccumulateurShaftAr);
-  private DigitalInput m_limitswitchavantG = new DigitalInput(kAccumulateurBallonAvD);
-  private DigitalInput m_limitswitcharriereG = new DigitalInput(kAccumulateurBallonArD);
-  private DigitalInput m_limitswitchavantD = new DigitalInput(0);
-  private DigitalInput m_limitswitcharriereD = new DigitalInput(0);
+  private DigitalInput m_limitswitchavantG = new DigitalInput(kAccumulateurBallonAvG);
+  private DigitalInput m_limitswitcharriereG = new DigitalInput(kAccumulateurBallonArG);
+  private DigitalInput m_limitswitchavantD = new DigitalInput(kAccumulateurBallonAvD);
+  private DigitalInput m_limitswitcharriereD = new DigitalInput(kAccumulateurBallonArG);
 
 
   public void tournerAvant(double vitesse) {
