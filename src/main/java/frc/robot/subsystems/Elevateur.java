@@ -15,8 +15,8 @@ import static frc.robot.Constants.*;
 public class Elevateur extends SubsystemBase {
   /** Creates a new elevateur. */
   // potentiometre
-  private AnalogPotentiometer potentiometreDroit = new AnalogPotentiometer(0);
-  private AnalogPotentiometer potentiometreGauche = new AnalogPotentiometer(0);
+  private AnalogPotentiometer potentiometreDroit = new AnalogPotentiometer(kElevateurPotentiometreD);
+  private AnalogPotentiometer potentiometreGauche = new AnalogPotentiometer(kElevateurPotentiometreG);
   // moteur
   private CANSparkMax m_mat1 = new CANSparkMax(kElevateurMoteur1, MotorType.kBrushless);
   private CANSparkMax m_mat2 = new CANSparkMax(kElevateurMoteur2, MotorType.kBrushless);
