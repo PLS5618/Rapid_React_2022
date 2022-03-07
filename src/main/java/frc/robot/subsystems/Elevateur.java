@@ -22,10 +22,10 @@ public class Elevateur extends SubsystemBase {
   private CANSparkMax m_mat2 = new CANSparkMax(kElevateurMoteur2, MotorType.kBrushless);
   
   // Limit Switch
-  private DigitalInput m_limit1 = new DigitalInput(kElevateurLimitSwitch1);
-  private DigitalInput m_limit2 = new DigitalInput(kElevateurLimitSwitch2);
-  private DigitalInput m_limit3 = new DigitalInput(kElevateurLimitSwitch3);
-  private DigitalInput m_limit4 = new DigitalInput(kElevateurLimitSwitch4);
+  private DigitalInput m_limithautd = new DigitalInput(kElevateurLimitSwitch1);
+  private DigitalInput m_limithautg = new DigitalInput(kElevateurLimitSwitch2);
+  private DigitalInput m_limitbasd = new DigitalInput(kElevateurLimitSwitch3);
+  private DigitalInput m_limitbasg = new DigitalInput(kElevateurLimitSwitch4);
   
   // function
   public void monteDescendre(double vitesse) {
@@ -33,11 +33,11 @@ public class Elevateur extends SubsystemBase {
     m_mat2.set (vitesse);
   }
   public boolean haut(){
-    return m_limit1.get() ||  m_limit2.get();
+    return m_limithautd.get() ||  m_limithautg.get();
   }
 
   public boolean bas(){
-    return m_limit3.get() || m_limit4.get();
+    return m_limitbasd.get() || m_limitbasg.get();
   }
   public double hateur(){
   return (potentiometreDroit.get () + potentiometreGauche.get())/2;
