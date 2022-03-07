@@ -10,21 +10,22 @@ import com.revrobotics.CANSparkMaxLowLevel.MotorType;
 import edu.wpi.first.wpilibj.AnalogPotentiometer;
 import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import static frc.robot.Constants.*;
 
 public class Elevateur extends SubsystemBase {
   /** Creates a new elevateur. */
   // potentiometre
-  private AnalogPotentiometer potentiometreDroit = new AnalogPotentiometer(0);
-  private AnalogPotentiometer potentiometreGauche = new AnalogPotentiometer(0);
+  private AnalogPotentiometer potentiometreDroit = new AnalogPotentiometer(kElevateurPotentiometreD);
+  private AnalogPotentiometer potentiometreGauche = new AnalogPotentiometer(kElevateurPotentiometreG);
   // moteur
-  private CANSparkMax m_mat1 = new CANSparkMax(0, MotorType.kBrushless);
-  private CANSparkMax m_mat2 = new CANSparkMax(0, MotorType.kBrushless);
+  private CANSparkMax m_mat1 = new CANSparkMax(kElevateurMoteur1, MotorType.kBrushless);
+  private CANSparkMax m_mat2 = new CANSparkMax(kElevateurMoteur2, MotorType.kBrushless);
   
   // Limit Switch
-  private DigitalInput m_limit1 = new DigitalInput(0);
-  private DigitalInput m_limit2 = new DigitalInput(0);
-  private DigitalInput m_limit3 = new DigitalInput(0);
-  private DigitalInput m_limit4 = new DigitalInput(0);
+  private DigitalInput m_limithautd = new DigitalInput(kElevateurLimitSwitch1);
+  private DigitalInput m_limithautg = new DigitalInput(kElevateurLimitSwitch2);
+  private DigitalInput m_limitbasd = new DigitalInput(kElevateurLimitSwitch3);
+  private DigitalInput m_limitbasg = new DigitalInput(kElevateurLimitSwitch4);
   
   // function
   public void monteDescendre(double vitesse) {
@@ -32,11 +33,11 @@ public class Elevateur extends SubsystemBase {
     m_mat2.set (vitesse);
   }
   public boolean haut(){
-    return m_limit1.get() ||  m_limit2.get();
+    return m_limithautd.get() ||  m_limithautg.get();
   }
 
   public boolean bas(){
-    return m_limit3.get() || m_limit4.get();
+    return m_limitbasd.get() || m_limitbasg.get();
   }
   public double hateur(){
   return (potentiometreDroit.get () + potentiometreGauche.get())/2;
