@@ -5,21 +5,21 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
+import frc.robot.subsystems.Lanceur;
+
 
 
 
 public class Lancer extends CommandBase {
-  private Lancer m_lancer;
+  private Lanceur m_lanceur;
   /** Creates a new lanceur. */
-  public Lancer(Lancer lanceur) {
+  public Lancer(Lanceur lanceur) {
    
     // Use addRequirements() here to declare subsystem dependencies.
-    m_lancer = lanceur;
-    addRequirements(m_lancer);
+    m_lanceur = lanceur;
+    addRequirements(m_lanceur);
   }
   
-  private void addRequirements(Lancer m_lancer2) {
-  }
 
   // Called when the command is initially scheduled.
   @Override
@@ -28,7 +28,7 @@ public class Lancer extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    m_lancer.LancerBallon1(0.5);
+    m_lanceur.lancer(0.5);
   }
 
   // Called once the command ends or is interrupted.
