@@ -18,6 +18,9 @@ public class Lancer extends CommandBase {
     addRequirements(m_lancer);
   }
   
+  private void addRequirements(Lancer m_lancer2) {
+  }
+
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {}
