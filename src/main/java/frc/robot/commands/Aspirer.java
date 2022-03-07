@@ -11,7 +11,7 @@ public class Aspirer extends CommandBase {
   Accumulateur m_accumulateur;
   /** Creates a new Aspirer. */
   public Aspirer(Accumulateur accumulateur) {
-    accumulateur = m_accumulateur;
+    m_accumulateur = accumulateur;
     addRequirements(accumulateur);
     // Use addRequirements() here to declare subsystem dependencies.
   }
@@ -23,7 +23,7 @@ public class Aspirer extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    if (m_accumulateur.ballonAvant()&& m_accumulateur.ballonArriere()) {
+    if (m_accumulateur.ballonAvant() && m_accumulateur.ballonArriere()) {
 
     }
     if (!m_accumulateur.ballonAvant()&& !m_accumulateur.ballonArriere()) {
