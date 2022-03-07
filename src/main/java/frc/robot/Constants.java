@@ -31,10 +31,10 @@ public final class Constants {
     public static int kElevateurPotentiometreD = 0;
     public static int kElevateurPotentiometreG = 1;
     // DIO
-    public static int kBalayeusePistonhaut1 = 0;
-    public static int kBalayeusePistonhaut2 = 1;
-    public static int kBalayeusePistonbas1 = 2;
-    public static int kBalayeusePistonbas2 = 3;
+    public static int kBalayeusePistonhautd = 0;
+    public static int kBalayeusePistonhautg = 1;
+    public static int kBalayeusePistonbasd = 2;
+    public static int kBalayeusePistonbasg = 3;
     public static int kAccumulateurBallonAvD = 4;
     public static int kAccumulateurBallonArD = 5;
     public static int kElevateurlimithautd = 6;
