@@ -35,12 +35,14 @@ public final class Constants {
     public static int kBalayeusePiston2 = 2;
     public static int kBalayeusePiston3 = 3;
     public static int kBalayeusePiston4 = 4;
-    public static int kAccumulateurBallonAv = 5;
-    public static int kAccumulateurBallonAr = 6;
+    public static int kAccumulateurBallonAvD = 5;
+    public static int kAccumulateurBallonArD = 6;
     public static int kElevateurLimitSwitch1 = 7;
     public static int kElevateurLimitSwitch2 = 8;
     public static int kElevateurLimitSwitch3 = 9;
     public static int kElevateurLimitSwitch4 = 10;
+    public static int kAccumulateurBallonAvG = 11;
+    public static int kAccumulateurBallonArG = 12;
     
     
     
