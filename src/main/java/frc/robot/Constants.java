@@ -28,21 +28,21 @@ public final class Constants {
     public static int kLancer2 = 11;
 
     // Analog
-    public static int kElevateurPotentiometreD = 1;
-    public static int kElevateurPotentiometreG = 2;
+    public static int kElevateurPotentiometreD = 0;
+    public static int kElevateurPotentiometreG = 1;
     // DIO
-    public static int kBalayeusePiston1 = 1;
-    public static int kBalayeusePiston2 = 2;
-    public static int kBalayeusePiston3 = 3;
-    public static int kBalayeusePiston4 = 4;
-    public static int kAccumulateurBallonAvD = 5;
-    public static int kAccumulateurBallonArD = 6;
-    public static int kElevateurLimitSwitch1 = 7;
-    public static int kElevateurLimitSwitch2 = 8;
-    public static int kElevateurLimitSwitch3 = 9;
-    public static int kElevateurLimitSwitch4 = 10;
-    public static int kAccumulateurBallonAvG = 11;
-    public static int kAccumulateurBallonArG = 12;
+    public static int kBalayeusePiston1 = 0;
+    public static int kBalayeusePiston2 = 1;
+    public static int kBalayeusePiston3 = 2;
+    public static int kBalayeusePiston4 = 3;
+    public static int kAccumulateurBallonAvD = 4;
+    public static int kAccumulateurBallonArD = 5;
+    public static int kElevateurLimitSwitch1 = 6;
+    public static int kElevateurLimitSwitch2 = 7;
+    public static int kElevateurLimitSwitch3 = 8;
+    public static int kElevateurLimitSwitch4 = 19;
+    public static int kAccumulateurBallonAvG = 10;
+    public static int kAccumulateurBallonArG = 11;
     
     
     
