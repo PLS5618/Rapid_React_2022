@@ -11,7 +11,7 @@ public class Aspirer extends CommandBase {
   Accumulateur m_accumulateur;
   /** Creates a new Aspirer. */
   public Aspirer(Accumulateur accumulateur) {
-    accumulateur = m_accumulateur;
+    m_accumulateur = accumulateur;
     addRequirements(accumulateur);
     // Use addRequirements() here to declare subsystem dependencies.
   }
