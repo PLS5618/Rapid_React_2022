@@ -10,12 +10,12 @@ import static frc.robot.Constants.*;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class Lanceur extends SubsystemBase {
-  private TalonSRX m_Lancer1 = new TalonSRX(kLancer1);
-  private TalonSRX m_Lancer2 = new TalonSRX(kLancer2);
+  private TalonSRX m_LancerBallon1 = new TalonSRX(kLancer1);
+  private TalonSRX m_LancerBallon2 = new TalonSRX(kLancer2);
   /** Creates a new lanceur. */
   public void lancer(double vitesse ){
-    m_Lancer1.set (ControlMode.PercentOutput, vitesse);
-    m_Lancer2.set (ControlMode.PercentOutput, vitesse);
+    m_LancerBallon1.set (ControlMode.PercentOutput, vitesse);
+    m_LancerBallon2.set (ControlMode.PercentOutput, vitesse);
      
   }
   public Lanceur() {}

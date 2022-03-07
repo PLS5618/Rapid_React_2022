@@ -8,14 +8,14 @@ import edu.wpi.first.wpilibj2.command.CommandBase;
 
 
 
-public class Lanceur extends CommandBase {
-  private Lancer m_Lancer;
+public class Lancer extends CommandBase {
+  private Lancer m_lancer;
   /** Creates a new lanceur. */
-  public Lanceur(Lanceur lanceur) {
+  public Lancer(Lancer lanceur) {
    
     // Use addRequirements() here to declare subsystem dependencies.
-    m_lanceur = lanceur;
-    addRequirements(m_lanceur);
+    m_lancer = lanceur;
+    addRequirements(m_lancer);
   }
   
   // Called when the command is initially scheduled.
@@ -25,7 +25,7 @@ public class Lanceur extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    m_lanceur.lancer1(0.5);
+    m_lancer.LancerBallon1(0.5);
   }
 
   // Called once the command ends or is interrupted.
