@@ -7,8 +7,10 @@ package frc.robot;
 import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.XboxController;
+import edu.wpi.first.wpilibj.PS4Controller.Button;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.RunCommand;
+import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import frc.robot.commands.Aspirer;
 import frc.robot.commands.BalayeuseTourner;
 import frc.robot.commands.DecentBalayeuse;
@@ -52,6 +54,9 @@ public class RobotContainer {
     // Configure the button bindings
     configureButtonBindings();
 
+    m_Elevateur.setDefaultCommand(m_Descend);
+    
+
     m_DriveTrain.setDefaultCommand(
       new RunCommand(
         new Runnable() {
@@ -70,7 +75,14 @@ public class RobotContainer {
    * edu.wpi.first.wpilibj2.command.button.JoystickButton}.
    */
   private void configureButtonBindings() {
-    new Joystick 
+    JoystickButton buttonA = new JoystickButton(m_Controller, XboxController.Button.kA.value);
+    buttonA.toggleWhenPressed(m_Monte);
+    JoystickButton buttonY = new JoystickButton(m_Controller, XboxController.Button.kA.value);
+    buttonY.toggleWhenPressed(m_MonteBalayeuse);
+    JoystickButton buttonB = new JoystickButton(m_Controller, XboxController.Button.kA.value);
+    buttonB.toggleWhenPressed(m_BalayeuseTourner);
+    JoystickButton buttonX = new JoystickButton(m_Controller, XboxController.Button.kA.value);
+    buttonX.toggleWhenPressed(m_Lancer); 
   } 
 
   /**
