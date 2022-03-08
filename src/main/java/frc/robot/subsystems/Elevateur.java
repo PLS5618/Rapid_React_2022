@@ -47,9 +47,10 @@ public class Elevateur extends SubsystemBase {
 
   @Override
   public void periodic() {
-    SmartDashboard.getBoolean("limithautd", limithautd());
-    SmartDashboard.getBoolean("limithautg", limithautg());
-    SmartDashboard.getBoolean("limitbasd", limitbasd());
+    SmartDashboard.putBoolean("limithautd", m_limithautd.get());
+    SmartDashboard.putBoolean("limithautg", m_limithautg.get());
+    SmartDashboard.putBoolean("limitbasd", m_limitbasd.get());
+    SmartDashboard.putBoolean("limitbasg", m_limitbasg.get());
     // This method will be called once per scheduler run
   }
 }

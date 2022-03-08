@@ -38,8 +38,8 @@ public class Accumulateur extends SubsystemBase {
   }
   @Override
   public void periodic() {
-    SmartDashboard.getBoolean("ballonAvant", ballonAvant());
-    SmartDashboard.getBoolean("ballonArriere", ballonArriere());
+    SmartDashboard.putBoolean("ballonAvant", ballonAvant());
+    SmartDashboard.putBoolean("ballonArriere", ballonArriere());
     // This method will be called once per scheduler run
   }
 }
