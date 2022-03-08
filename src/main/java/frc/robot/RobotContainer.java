@@ -8,6 +8,13 @@ import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.RunCommand;
+import frc.robot.commands.Aspirer;
+import frc.robot.commands.BalayeuseTourner;
+import frc.robot.commands.DecentBalayeuse;
+import frc.robot.commands.Descend;
+import frc.robot.commands.Lancer;
+import frc.robot.commands.Monte;
+import frc.robot.commands.MonteBalayeuse;
 import frc.robot.subsystems.Accumulateur;
 import frc.robot.subsystems.Balayeuse;
 import frc.robot.subsystems.DriveTrain;
@@ -23,12 +30,20 @@ import frc.robot.subsystems.Lanceur;
 public class RobotContainer {
   // The robot's subsystems and commands are defined here...
   private XboxController m_Controller = new XboxController(0);
-
+//subsystems
   private DriveTrain m_DriveTrain = new DriveTrain();
   private Elevateur m_Elevateur = new Elevateur();
   private Lanceur m_Lanceur = new Lanceur();
   private Accumulateur m_Accumulateur = new Accumulateur();
   private Balayeuse m_Balayeuse = new Balayeuse();  
+//command
+  private Monte m_Monte = new Monte(m_Elevateur);
+  private Aspirer m_Aspirer = new Aspirer(m_Accumulateur);
+  private BalayeuseTourner m_BalayeuseTourner = new BalayeuseTourner(m_Balayeuse);
+  private DecentBalayeuse m_DecentBalayeuse = new DecentBalayeuse(m_Balayeuse);
+  private Descend m_Descend = new Descend(m_Elevateur);
+  private Lancer m_Lancer = new Lancer(m_Lanceur);
+  private MonteBalayeuse m_MonteBalayeuse = new MonteBalayeuse(m_Balayeuse);
 
 
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
