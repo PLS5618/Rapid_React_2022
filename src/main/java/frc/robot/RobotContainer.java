@@ -8,7 +8,11 @@ import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.RunCommand;
+import frc.robot.subsystems.Accumulateur;
+import frc.robot.subsystems.Balayeuse;
 import frc.robot.subsystems.DriveTrain;
+import frc.robot.subsystems.Elevateur;
+import frc.robot.subsystems.Lanceur;
 
 /**
  * This class is where the bulk of the robot should be declared. Since Command-based is a
@@ -18,9 +22,14 @@ import frc.robot.subsystems.DriveTrain;
  */
 public class RobotContainer {
   // The robot's subsystems and commands are defined here...
-  public XboxController m_Controller = new XboxController(0);
+  private XboxController m_Controller = new XboxController(0);
 
-  public DriveTrain m_DriveTrain = new DriveTrain(); 
+  private DriveTrain m_DriveTrain = new DriveTrain();
+  private Elevateur m_Elevateur = new Elevateur();
+  private Lanceur m_Lanceur = new Lanceur();
+  private Accumulateur m_Accumulateur = new Accumulateur();
+  private Balayeuse m_Balayeuse = new Balayeuse();  
+
 
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
@@ -44,7 +53,9 @@ public class RobotContainer {
    * edu.wpi.first.wpilibj.Joystick} or {@link XboxController}), and then passing it to a {@link
    * edu.wpi.first.wpilibj2.command.button.JoystickButton}.
    */
-  private void configureButtonBindings() {} 
+  private void configureButtonBindings() {
+
+  } 
 
   /**
    * Use this to pass the autonomous command to the main {@link Robot} class.
