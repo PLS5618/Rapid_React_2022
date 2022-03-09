@@ -9,6 +9,7 @@ import com.revrobotics.CANSparkMaxLowLevel.MotorType;
 
 import edu.wpi.first.wpilibj.AnalogPotentiometer;
 import edu.wpi.first.wpilibj.DigitalInput;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import static frc.robot.Constants.*;
 
@@ -46,6 +47,10 @@ public class Elevateur extends SubsystemBase {
 
   @Override
   public void periodic() {
+    SmartDashboard.putBoolean("limithautd", m_limithautd.get());
+    SmartDashboard.putBoolean("limithautg", m_limithautg.get());
+    SmartDashboard.putBoolean("limitbasd", m_limitbasd.get());
+    SmartDashboard.putBoolean("limitbasg", m_limitbasg.get());
     // This method will be called once per scheduler run
   }
 }
