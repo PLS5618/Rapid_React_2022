@@ -74,6 +74,7 @@ public class RobotContainer {
    * edu.wpi.first.wpilibj2.command.button.JoystickButton}.
    */
   private void configureButtonBindings() {
+
     JoystickButton buttonA = new JoystickButton(m_Controller, XboxController.Button.kA.value);
     buttonA.toggleWhenPressed(m_Monte);
     JoystickButton buttonY = new JoystickButton(m_Controller, XboxController.Button.kA.value);
@@ -82,6 +83,7 @@ public class RobotContainer {
     buttonB.toggleWhenPressed(m_BalayeuseTourner);
     JoystickButton buttonX = new JoystickButton(m_Controller, XboxController.Button.kA.value);
     buttonX.toggleWhenPressed(m_Lancer); 
+
   } 
 
   /**
