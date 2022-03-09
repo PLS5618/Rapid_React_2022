@@ -10,7 +10,7 @@ import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.RunCommand;
-import edu.wpi.first.wpilibj2.command.SequentialCommandGroup;
+
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import frc.robot.commands.Aspirer;
 import frc.robot.commands.BalayeuseTourner;
@@ -27,11 +27,6 @@ import frc.robot.subsystems.Lanceur;
 
 
 
-// commmande Y
-
-public class Y extends SequentialCommandGroup {
-  private BouttonY m_BouttonY = new BouttonY(); 
-}
 
 /**
  * This class is where the bulk of the robot should be declared. Since Command-based is a
@@ -87,10 +82,8 @@ public class RobotContainer {
 
     JoystickButton buttonA = new JoystickButton(m_Controller, XboxController.Button.kA.value);
     buttonA.toggleWhenPressed(m_Monte);
-    JoystickButton buttonY = new JoystickButton(m_Controller, XboxController.Button.kA.value);
-    buttonY.toggleWhenPressed(m_MonteBalayeuse);
     JoystickButton buttonB = new JoystickButton(m_Controller, XboxController.Button.kA.value);
-    buttonB.toggleWhenPressed(m_BalayeuseTourner);
+    buttonB.toggleWhenPressed(m_DecentBalayeuse);
     JoystickButton buttonX = new JoystickButton(m_Controller, XboxController.Button.kA.value);
     buttonX.toggleWhenPressed(m_Lancer); 
 
