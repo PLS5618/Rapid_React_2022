@@ -31,7 +31,7 @@ public class Lancer extends CommandBase {
   public void execute() {
     m_lanceur.lancer(SmartDashboard.getNumber("Force Lanceur", 0.5));
   }
-
+  
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {}
