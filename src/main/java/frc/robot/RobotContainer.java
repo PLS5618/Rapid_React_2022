@@ -29,7 +29,7 @@ import frc.robot.subsystems.Lanceur;
 
 // commmande Y
 
-public class  extends SequentialCommandGroup {
+public class Y extends SequentialCommandGroup {
   private BouttonY m_BouttonY = new BouttonY(); 
 }
 
