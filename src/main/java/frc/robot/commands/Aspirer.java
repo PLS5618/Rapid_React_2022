@@ -4,6 +4,7 @@
 
 package frc.robot.commands;
 
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.subsystems.Accumulateur;
 
@@ -27,8 +28,8 @@ public class Aspirer extends CommandBase {
 
     }
     if (!m_accumulateur.ballonAvant()&& !m_accumulateur.ballonArriere()) {
-      m_accumulateur.tournerAvant(0.5);
-      m_accumulateur.tournerArriere(0.5);
+      m_accumulateur.tournerAvant(SmartDashboard.getNumber("Ballon qui rentre 1", 0.5));
+      m_accumulateur.tournerArriere(SmartDashboard.getNumber("Ballon qui rentre 2", 0.5));
       
     }
     if (m_accumulateur.ballonAvant()&& !m_accumulateur.ballonArriere()) {
