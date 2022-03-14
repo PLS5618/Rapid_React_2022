@@ -35,4 +35,7 @@ public class DriveTrain extends SubsystemBase {
   public void periodic() {
     // This method will be called once per scheduler run
   }
+
+public void m_gauche(double d) {
+}
 }
