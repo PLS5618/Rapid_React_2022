@@ -8,14 +8,14 @@ import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.subsystems.DriveTrain;
 public class Reculer extends CommandBase {
 
-  private drivetrain m_drivetrain;
+  private DriveTrain m_drivetrain;
 
   /** Creates a new reculer. */
   public Reculer(DriveTrain driveTrain) {
     // Use addRequirements() here to declare subsystem dependencies.
   }
-  m_Drivetrain = Drivetrain;
-  addRequirements(drivetrain);
+  m_drivetrain = drivetrain;
+  addRequirements(m_drivetrain);
 
   // Called when the command is initially scheduled.
   @Override
