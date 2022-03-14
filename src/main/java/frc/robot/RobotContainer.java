@@ -25,6 +25,7 @@ import frc.robot.subsystems.Balayeuse;
 import frc.robot.subsystems.DriveTrain;
 import frc.robot.subsystems.Elevateur;
 import frc.robot.subsystems.Lanceur;
+import frc.robot.commands.ButtonY;
 
 
 
@@ -52,7 +53,7 @@ public class RobotContainer {
   private Descend m_Descend = new Descend(m_Elevateur);
   private Lancer m_Lancer = new Lancer(m_Lanceur);
   private MonteBalayeuse m_MonteBalayeuse = new MonteBalayeuse(m_Balayeuse);
-  private ButtonY m_ButtonY = new ButtonY();
+  private ButtonY m_ButtonY = new ButtonY(m_ButtonY);
 
   
   /** The container for the robot. Contains subsystems, OI devices, and commands. */

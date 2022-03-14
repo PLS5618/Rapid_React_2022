@@ -29,4 +29,7 @@ public class ButtonY extends SequentialCommandGroup {
       new MonteBalayeuse(balayeuse)
     );
   }
+
+public ButtonY(ButtonY m_ButtonY) {
+}
 }
