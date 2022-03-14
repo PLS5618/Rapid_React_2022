@@ -14,6 +14,7 @@ import edu.wpi.first.wpilibj2.command.RunCommand;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import frc.robot.commands.Aspirer;
 import frc.robot.commands.BalayeuseTourner;
+import frc.robot.commands.ButtonY;
 import frc.robot.commands.DecentBalayeuse;
 import frc.robot.commands.Descend;
 import frc.robot.commands.Lancer;
@@ -51,6 +52,7 @@ public class RobotContainer {
   private Descend m_Descend = new Descend(m_Elevateur);
   private Lancer m_Lancer = new Lancer(m_Lanceur);
   private MonteBalayeuse m_MonteBalayeuse = new MonteBalayeuse(m_Balayeuse);
+  private ButtonY m_ButtonY = new ButtonY();
 
   
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
