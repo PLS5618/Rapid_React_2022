@@ -21,12 +21,12 @@ public class ButtonY extends SequentialCommandGroup {
     // Add your commands in the addCommands() call, e.g.
     // addCommands(new FooCommand(), new BarCommand());
     addCommands(
-       new DecentBalayeuse(balayeuse),
-       deadline(
-         new Aspirer(accumulateur),
-         new BalayeuseTourner(balayeuse)
-        ) ;
-      new MonteBalayeuse(balayeuse);
+      new DecentBalayeuse(balayeuse),
+      deadline(
+        new Aspirer(accumulateur),
+        new BalayeuseTourner(balayeuse)
+        ), 
+      new MonteBalayeuse(balayeuse)
     );
   }
 }
