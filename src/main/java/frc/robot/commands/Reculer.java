@@ -5,17 +5,22 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
+import edu.wpi.first.wpilibj2.command.Subsystem;
 import frc.robot.subsystems.DriveTrain;
+
+
 public class Reculer extends CommandBase {
 
-  private DriveTrain m_drivetrain;
+  private DriveTrain m_driveTrain;
 
-  /** Creates a new reculer. */
-  public Reculer(DriveTrain driveTrain) {
+  /** Creates a new reculer. 
+   * @param m_drivetrain */
+  public Reculer(DriveTrain driveTrain, Subsystem m_drivetrain) {
+    m_driveTrain = driveTrain;
+  addRequirements(m_drivetrain);
     // Use addRequirements() here to declare subsystem dependencies.
   }
-  m_drivetrain = drivetrain;
-  addRequirements(m_drivetrain);
+  
 
   // Called when the command is initially scheduled.
   @Override
