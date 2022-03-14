@@ -35,7 +35,7 @@ import frc.robot.subsystems.Lanceur;
  * periodic methods (other than the scheduler calls). Instead, the structure of the robot (including
  * subsystems, commands, and button mappings) should be declared here.
  */
-public class RobotContainer {
+public class RobotContainer { 
   // The robot's subsystems and commands are defined here...
   private XboxController m_Controller = new XboxController(0);
 //subsystems
