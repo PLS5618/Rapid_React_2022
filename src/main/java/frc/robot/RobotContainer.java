@@ -4,13 +4,17 @@
 
 package frc.robot;
 
+
+
 import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.RunCommand;
+
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import frc.robot.commands.Aspirer;
 import frc.robot.commands.BalayeuseTourner;
+import frc.robot.commands.ButtonY;
 import frc.robot.commands.DecentBalayeuse;
 import frc.robot.commands.Descend;
 import frc.robot.commands.Lancer;
@@ -21,14 +25,18 @@ import frc.robot.subsystems.Balayeuse;
 import frc.robot.subsystems.DriveTrain;
 import frc.robot.subsystems.Elevateur;
 import frc.robot.subsystems.Lanceur;
+import frc.robot.commands.ButtonY;
+
+
+
 
 /**
  * This class is where the bulk of the robot should be declared. Since Command-based is a
- * "declarative" paradigm, very little robot logic should actually be handled in the {@link Robot}
+ * "declarative" par adigm, very little robot logic should actually be handled in the {@link Robot}
  * periodic methods (other than the scheduler calls). Instead, the structure of the robot (including
  * subsystems, commands, and button mappings) should be declared here.
  */
-public class RobotContainer {
+public class RobotContainer { 
   // The robot's subsystems and commands are defined here...
   private XboxController m_Controller = new XboxController(0);
 //subsystems
@@ -45,8 +53,9 @@ public class RobotContainer {
   private Descend m_Descend = new Descend(m_Elevateur);
   private Lancer m_Lancer = new Lancer(m_Lanceur);
   private MonteBalayeuse m_MonteBalayeuse = new MonteBalayeuse(m_Balayeuse);
+  private ButtonY m_ButtonY = new ButtonY(m_Balayeuse, m_Accumulateur);
 
-
+  
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
     // Configure the button bindings
@@ -76,10 +85,8 @@ public class RobotContainer {
 
     JoystickButton buttonA = new JoystickButton(m_Controller, XboxController.Button.kA.value);
     buttonA.toggleWhenPressed(m_Monte);
-    JoystickButton buttonY = new JoystickButton(m_Controller, XboxController.Button.kA.value);
-    buttonY.toggleWhenPressed(m_MonteBalayeuse);
     JoystickButton buttonB = new JoystickButton(m_Controller, XboxController.Button.kA.value);
-    buttonB.toggleWhenPressed(m_BalayeuseTourner);
+    buttonB.toggleWhenPressed(m_DecentBalayeuse);
     JoystickButton buttonX = new JoystickButton(m_Controller, XboxController.Button.kA.value);
     buttonX.toggleWhenPressed(m_Lancer); 
 
