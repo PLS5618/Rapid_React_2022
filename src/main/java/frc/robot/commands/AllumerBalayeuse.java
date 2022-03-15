@@ -6,10 +6,13 @@ package frc.robot.commands;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
 
-public class AutoDescendreBalayeuse extends CommandBase {
-  /** Creates a new AutoDescendreBalayeuse. */
-  public AutoDescendreBalayeuse() {
+public class AllumerBalayeuse extends CommandBase {
+  private BalayeuseTourner balayeusetourner;
+  /** Creates a new AllumerBalaeuse. */
+  public AllumerBalayeuse(BalayeuseTourner balayeuseTourner) {
     // Use addRequirements() here to declare subsystem dependencies.
+    m_balayeusetourner = balayeusetourner;
+    addRequirements( m_balayeusetourner);
   }
 
   // Called when the command is initially scheduled.
