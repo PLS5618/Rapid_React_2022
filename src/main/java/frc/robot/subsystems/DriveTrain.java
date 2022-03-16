@@ -38,4 +38,7 @@ public class DriveTrain extends SubsystemBase {
 
 public void m_gauche(double d) {
 }
+
+public void m_droit(double d) {
+}
 }
