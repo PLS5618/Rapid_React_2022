@@ -8,15 +8,17 @@ package frc.robot;
 
 import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.XboxController;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.RunCommand;
-
+import edu.wpi.first.wpilibj2.command.SequentialCommandGroup;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import frc.robot.commands.ButtonY;
 import frc.robot.commands.Descend;
 import frc.robot.commands.Lancer;
 import frc.robot.commands.Monte;
 import frc.robot.commands.MonteBalayeuse;
+import frc.robot.commands.Reculer;
 import frc.robot.subsystems.Accumulateur;
 import frc.robot.subsystems.Balayeuse;
 import frc.robot.subsystems.DriveTrain;
@@ -94,6 +96,10 @@ public class RobotContainer {
    */
   public Command getAutonomousCommand() {
     // An ExampleCommand will run in autonomous
-    return null;
+    SmartDashboard.getString("auto", "aucun");
+    return new SequentialCommandGroup(
+      new Lancer(m_Lanceur).withTimeout(7),
+      new Reculer(m_DriveTrain)
+    );
   }
 }

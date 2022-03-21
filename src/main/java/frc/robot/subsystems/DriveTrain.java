@@ -10,6 +10,7 @@ import static frc.robot.Constants.*;
 
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj.motorcontrol.MotorControllerGroup;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class DriveTrain extends SubsystemBase {
@@ -28,17 +29,30 @@ public class DriveTrain extends SubsystemBase {
     m_drive.arcadeDrive(xSpeed, zRotation);
   }
 
+  public double Distance() {
+    return (m_avantdroit.getEncoder().getPosition()
+    + m_avantgauche.getEncoder().getPosition()
+    + m_arrieredroit.getEncoder().getPosition()
+    + m_arrieregauche.getEncoder().getPosition()) / 4;
+  } 
+
+  public void Reset() {
+    m_avantgauche.getEncoder().setPosition(0);
+    m_avantdroit.getEncoder().setPosition(0);
+    m_arrieregauche.getEncoder().setPosition(0);
+    m_arrieredroit.getEncoder().setPosition(0);
+  }
+
   /** Creates a new DriveTrain. */
   public DriveTrain() {}
 
   @Override
   public void periodic() {
+    SmartDashboard.putNumber("Distance", 0.5);
     // This method will be called once per scheduler run
   }
 
-public void m_gauche(double d) {
-}
 
-public void m_droit(double d) {
-}
+
+
 }
