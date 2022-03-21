@@ -46,7 +46,7 @@ public class RobotContainer {
   private Balayeuse m_Balayeuse = new Balayeuse();  
 //command
   private Monte m_MonteBarre1 = new Monte(m_Elevateur, Barre.kBarre1);
-  private Monte m_MonteBarre2 = new Monte(m_Elevateur, Barre.kBarre1);
+  private Monte m_MonteBarre2 = new Monte(m_Elevateur, Barre.kBarre2);
   private Descend m_Descend = new Descend(m_Elevateur);
   private Lancer m_Lancer = new Lancer(m_Lanceur);
   private MonteBalayeuse m_MonteBalayeuse = new MonteBalayeuse(m_Balayeuse);
