@@ -83,7 +83,7 @@ public class RobotContainer {
     JoystickButton buttonA = new JoystickButton(m_Controller, XboxController.Button.kA.value);
     buttonA.whenPressed(m_MonteBarre2);
     JoystickButton leftbumper = new JoystickButton(m_Controller, XboxController.Button.kLeftBumper.value);
-    leftbumper.whenPressed(m_MonteBarre2);
+    leftbumper.whenPressed(m_MonteBarre1);
     JoystickButton buttonB = new JoystickButton(m_Controller, XboxController.Button.kB.value);
     buttonB.whenPressed(m_MonteBalayeuse);
     JoystickButton buttonX = new JoystickButton(m_Controller, XboxController.Button.kX.value);
