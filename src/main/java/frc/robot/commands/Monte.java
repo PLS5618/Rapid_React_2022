@@ -44,7 +44,7 @@ public class Monte extends CommandBase {
   public boolean isFinished() {
     double hauteur = 0;
     if(m_barre == Barre.kBarre1)
-    hauteur = SmartDashboard.getNumber("position barre1", 0;
+    hauteur = SmartDashboard.getNumber("position barre1", 0);
     else if (m_barre == Barre.kBarre2)
     hauteur = SmartDashboard.getNumber("position barre2", 0);
     return m_elevateur.haut() || m_elevateur.hauteur() > hauteur;
