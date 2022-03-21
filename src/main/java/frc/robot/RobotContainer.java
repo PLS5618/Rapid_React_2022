@@ -81,15 +81,15 @@ public class RobotContainer {
   private void configureButtonBindings() {
 
     JoystickButton buttonA = new JoystickButton(m_Controller, XboxController.Button.kA.value);
-    buttonA.whenPressed(m_MonteBarre2);
+    buttonA.whileHeld(m_MonteBarre2);
     JoystickButton leftbumper = new JoystickButton(m_Controller, XboxController.Button.kLeftBumper.value);
-    leftbumper.whenPressed(m_MonteBarre1);
+    leftbumper.whileHeld(m_MonteBarre1);
     JoystickButton buttonB = new JoystickButton(m_Controller, XboxController.Button.kB.value);
     buttonB.whenPressed(m_MonteBalayeuse);
     JoystickButton buttonX = new JoystickButton(m_Controller, XboxController.Button.kX.value);
-    buttonX.whenPressed(m_Lancer);
+    buttonX.whenHeld(m_Lancer);
     JoystickButton buttonY = new JoystickButton(m_Controller, XboxController.Button.kY.value);
-    buttonY.whenPressed(m_ButtonY);   
+    buttonY.toggleWhenPressed(m_ButtonY);
 
   } 
 

@@ -15,16 +15,16 @@ public class Lanceur extends SubsystemBase {
   private TalonSRX m_LancerBallon2 = new TalonSRX(kLancer2);
   /** Creates a new lanceur. */
   public void lancer(double vitesse ){
-    m_LancerBallon1.set (ControlMode.PercentOutput, vitesse);
-    m_LancerBallon2.set (ControlMode.PercentOutput, vitesse);
+    m_LancerBallon1.set (ControlMode.Velocity, vitesse);
+    
      
   }
 
-  public void setPID(double p, double i, double d, double f){
+  public void setPID(double p, double i, double d){
     m_LancerBallon1.config_kP(0, p);
     m_LancerBallon1.config_kI(0, i);
     m_LancerBallon1.config_kD(0, d);
-    m_LancerBallon1.config_kF(0, f);
+    
   }
 
   public Lanceur() {

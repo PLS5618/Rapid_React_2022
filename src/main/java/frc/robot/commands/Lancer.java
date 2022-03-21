@@ -24,12 +24,14 @@ public class Lancer extends CommandBase {
 
   // Called when the command is initially scheduled.
   @Override
-  public void initialize() {}
+  public void initialize() {
+    m_lanceur.setPID(0.25, 0.001, 20);
+  }
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    m_lanceur.lancer(SmartDashboard.getNumber("Force Lanceur", 0.5));
+    m_lanceur.lancer(SmartDashboard.getNumber("Force Lanceur", 1000));
   }
   
   // Called once the command ends or is interrupted.
