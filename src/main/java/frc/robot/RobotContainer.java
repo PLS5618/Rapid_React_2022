@@ -19,6 +19,7 @@ import frc.robot.commands.Lancer;
 import frc.robot.commands.Monte;
 import frc.robot.commands.MonteBalayeuse;
 import frc.robot.commands.Reculer;
+import frc.robot.commands.Monte.Barre;
 import frc.robot.subsystems.Accumulateur;
 import frc.robot.subsystems.Balayeuse;
 import frc.robot.subsystems.DriveTrain;
@@ -44,7 +45,8 @@ public class RobotContainer {
   private Accumulateur m_Accumulateur = new Accumulateur();
   private Balayeuse m_Balayeuse = new Balayeuse();  
 //command
-  private Monte m_Monte = new Monte(m_Elevateur);
+  private Monte m_MonteBarre1 = new Monte(m_Elevateur, Barre.kBarre1);
+  private Monte m_MonteBarre2 = new Monte(m_Elevateur, Barre.kBarre1);
   private Descend m_Descend = new Descend(m_Elevateur);
   private Lancer m_Lancer = new Lancer(m_Lanceur);
   private MonteBalayeuse m_MonteBalayeuse = new MonteBalayeuse(m_Balayeuse);
@@ -79,12 +81,14 @@ public class RobotContainer {
   private void configureButtonBindings() {
 
     JoystickButton buttonA = new JoystickButton(m_Controller, XboxController.Button.kA.value);
-    buttonA.whenPressed(m_Monte);
-    JoystickButton buttonB = new JoystickButton(m_Controller, XboxController.Button.kA.value);
+    buttonA.whenPressed(m_MonteBarre2);
+    JoystickButton leftbumper = new JoystickButton(m_Controller, XboxController.Button.kLeftBumper.value);
+    leftbumper.whenPressed(m_MonteBarre2);
+    JoystickButton buttonB = new JoystickButton(m_Controller, XboxController.Button.kB.value);
     buttonB.whenPressed(m_MonteBalayeuse);
-    JoystickButton buttonX = new JoystickButton(m_Controller, XboxController.Button.kA.value);
+    JoystickButton buttonX = new JoystickButton(m_Controller, XboxController.Button.kX.value);
     buttonX.whenPressed(m_Lancer);
-    JoystickButton buttonY = new JoystickButton(m_Controller, XboxController.Button.kA.value);
+    JoystickButton buttonY = new JoystickButton(m_Controller, XboxController.Button.kY.value);
     buttonY.whenPressed(m_ButtonY);   
 
   } 

@@ -9,12 +9,16 @@ import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.subsystems.Elevateur;
 
 public class Monte extends CommandBase {
-
+  public enum Barre{
+    kBarre1, kBarre2
+  }
   private Elevateur m_elevateur; 
+  private Barre m_barre;
 
   /** Creates a new Reculer. */
-  public Monte(Elevateur elevateur) {
+  public Monte(Elevateur elevateur, Barre barre) {
     m_elevateur=elevateur;
+    m_barre = barre;
     // Use addRequirements() here to declare subsystem dependencies.
     addRequirements(m_elevateur);
   }
@@ -38,6 +42,11 @@ public class Monte extends CommandBase {
   // Returns true when the command should end.
   @Override
   public boolean isFinished() {
-    return m_elevateur.haut();
+    double hauteur = 0;
+    if(m_barre == Barre.kBarre1)
+    hauteur = SmartDashboard.getNumber("position barre1", 0;
+    else if (m_barre == Barre.kBarre2)
+    hauteur = SmartDashboard.getNumber("position barre2", 0);
+    return m_elevateur.haut() || m_elevateur.hauteur() > hauteur;
   }
 }
