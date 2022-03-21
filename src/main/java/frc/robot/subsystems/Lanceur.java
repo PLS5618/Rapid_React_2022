@@ -5,6 +5,7 @@
 package frc.robot.subsystems;
 
 import com.ctre.phoenix.motorcontrol.ControlMode;
+import com.ctre.phoenix.motorcontrol.FeedbackDevice;
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 import static frc.robot.Constants.*;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
@@ -18,7 +19,18 @@ public class Lanceur extends SubsystemBase {
     m_LancerBallon2.set (ControlMode.PercentOutput, vitesse);
      
   }
-  public Lanceur() {}
+
+  public void setPID(double p, double i, double d, double f){
+    m_LancerBallon1.config_kP(0, p);
+    m_LancerBallon1.config_kI(0, i);
+    m_LancerBallon1.config_kD(0, d);
+    m_LancerBallon1.config_kF(0, f);
+  }
+
+  public Lanceur() {
+    m_LancerBallon1.configSelectedFeedbackSensor(FeedbackDevice.CTRE_MagEncoder_Relative);
+    m_LancerBallon2.follow(m_LancerBallon1);
+  }
 
   @Override
   public void periodic() {

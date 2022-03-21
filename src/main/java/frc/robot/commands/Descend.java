@@ -27,6 +27,7 @@ public class Descend extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
+    if(!m_elevateur.bas())
     m_elevateur.monteDescendre(SmartDashboard.getNumber("Force Descendre", -0.5));
   }
 
