@@ -40,7 +40,7 @@ public class Elevateur extends SubsystemBase {
   public boolean bas(){
     return m_limitbasd.get() || m_limitbasg.get();
   }
-  public double hateur(){
+  public double hauteur(){
   return (potentiometreDroit.get () + potentiometreGauche.get())/2;
   }
 
