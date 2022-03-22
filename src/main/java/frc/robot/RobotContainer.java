@@ -48,7 +48,7 @@ public class RobotContainer {
   private Monte m_MonteBarre1 = new Monte(m_Elevateur, Barre.kBarre1);
   private Monte m_MonteBarre2 = new Monte(m_Elevateur, Barre.kBarre2);
   private Descend m_Descend = new Descend(m_Elevateur);
-  private Lancer m_Lancer = new Lancer(m_Lanceur);
+  private Lancer m_Lancer = new Lancer(m_Lanceur, m_Accumulateur);
   private MonteBalayeuse m_MonteBalayeuse = new MonteBalayeuse(m_Balayeuse);
   private ButtonY m_ButtonY = new ButtonY(m_Balayeuse, m_Accumulateur);
 
@@ -102,7 +102,7 @@ public class RobotContainer {
     // An ExampleCommand will run in autonomous
     SmartDashboard.getString("auto", "aucun");
     return new SequentialCommandGroup(
-      new Lancer(m_Lanceur).withTimeout(7),
+      new Lancer(m_Lanceur, m_Accumulateur).withTimeout(7),
       new Reculer(m_DriveTrain)
     );
   }

@@ -24,24 +24,6 @@ public class Aspirer extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    double spd = SmartDashboard.getNumber("Ballon qui rentre", 0.5);
-    if (m_accumulateur.ballonAvant() && m_accumulateur.ballonArriere()) {
-
-    }
-    if (!m_accumulateur.ballonAvant()&& !m_accumulateur.ballonArriere()) {
-      m_accumulateur.tournerAvant(spd);
-      m_accumulateur.tournerArriere(spd);
-      
-    }
-    if (m_accumulateur.ballonAvant()&& !m_accumulateur.ballonArriere()) {
-      m_accumulateur.tournerAvant(spd);
-      m_accumulateur.tournerArriere(spd);
-      
-    }
-    if (!m_accumulateur.ballonAvant()&& m_accumulateur.ballonArriere()) {
-      m_accumulateur.tournerAvant(spd);
-      
-    }
   }
 
   // Called once the command ends or is interrupted.

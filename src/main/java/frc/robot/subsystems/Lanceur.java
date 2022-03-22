@@ -27,6 +27,10 @@ public class Lanceur extends SubsystemBase {
     
   }
 
+  public double Vitesse() {
+    return m_LancerBallon1.getSelectedSensorVelocity(0);
+  }
+
   public Lanceur() {
     m_LancerBallon1.configSelectedFeedbackSensor(FeedbackDevice.CTRE_MagEncoder_Relative);
     m_LancerBallon2.follow(m_LancerBallon1);

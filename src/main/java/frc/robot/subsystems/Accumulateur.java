@@ -24,11 +24,13 @@ public class Accumulateur extends SubsystemBase {
   private DigitalInput m_limitswitcharriereD = new DigitalInput(kAccumulateurBallonArG);
 
 
-  public void tournerAvant(double vitesse) {
-    m_shaftavant.set (ControlMode.PercentOutput, vitesse);
+  public void tournerAvant() {
+    double spd = SmartDashboard.getNumber("Ballon qui rentre", 0.5);
+    m_shaftavant.set (ControlMode.PercentOutput, spd);
   }
-  public void tournerArriere(double vitesse) {
-    m_shaftarriere.set (ControlMode.PercentOutput,vitesse);
+  public void tournerArriere() {
+    double spd = SmartDashboard.getNumber("Ballon qui rentre", 0.5);
+    m_shaftarriere.set (ControlMode.PercentOutput, spd);
   }
   public boolean ballonAvant(){
    return m_limitswitchavantG.get() || m_limitswitchavantD.get();

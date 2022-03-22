@@ -6,6 +6,7 @@ package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.CommandBase;
+import frc.robot.subsystems.Accumulateur;
 import frc.robot.subsystems.Lanceur;
 
 
@@ -13,12 +14,14 @@ import frc.robot.subsystems.Lanceur;
 
 public class Lancer extends CommandBase {
   private Lanceur m_lanceur;
+  private Accumulateur m_accumulateur;
   /** Creates a new lanceur. */
-  public Lancer(Lanceur lanceur) {
+  public Lancer(Lanceur lanceur, Accumulateur accumulateur){
    
     // Use addRequirements() here to declare subsystem dependencies.
     m_lanceur = lanceur;
-    addRequirements(m_lanceur);
+    m_accumulateur = accumulateur;
+    addRequirements(m_lanceur, m_accumulateur);
   }
   
 
@@ -31,7 +34,13 @@ public class Lancer extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    m_lanceur.lancer(SmartDashboard.getNumber("Force Lanceur", 1000));
+    double vitesse = SmartDashboard.getNumber("Force Lanceur", 1000);
+    m_lanceur.lancer(vitesse);
+    if (m_lanceur.Vitesse() > vitesse - 500) {
+      m_accumulateur.tournerAvant();
+      m_accumulateur.tournerArriere();
+
+    }
   }
   
   // Called once the command ends or is interrupted.
