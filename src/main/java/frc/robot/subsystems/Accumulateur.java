@@ -21,7 +21,7 @@ public class Accumulateur extends SubsystemBase {
   private DigitalInput m_limitswitchavantG = new DigitalInput(kAccumulateurBallonAvG);
   private DigitalInput m_limitswitcharriereG = new DigitalInput(kAccumulateurBallonArG);
   private DigitalInput m_limitswitchavantD = new DigitalInput(kAccumulateurBallonAvD);
-  private DigitalInput m_limitswitcharriereD = new DigitalInput(kAccumulateurBallonArG);
+  private DigitalInput m_limitswitcharriereD = new DigitalInput(kAccumulateurBallonArD);
 
 
   public void tournerAvant() {
