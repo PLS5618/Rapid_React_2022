@@ -5,7 +5,8 @@
 package frc.robot.subsystems;
 
 import com.ctre.phoenix.motorcontrol.ControlMode;
-import com.ctre.phoenix.motorcontrol.can.TalonSRX;
+import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
+
 import static frc.robot.Constants.*;
 
 
@@ -16,8 +17,8 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 public class Accumulateur extends SubsystemBase {
 
   /** Creates a new Accumulateur. */
-  private TalonSRX m_shaftavant = new TalonSRX(kAccumulateurShaftAv);
-  private TalonSRX m_shaftarriere = new TalonSRX(kAccumulateurShaftAr);
+  private WPI_TalonSRX m_shaftavant = new WPI_TalonSRX(kAccumulateurShaftAv);
+  private WPI_TalonSRX m_shaftarriere = new WPI_TalonSRX(kAccumulateurShaftAr);
   private DigitalInput m_limitswitchavantG = new DigitalInput(kAccumulateurBallonAvG);
   private DigitalInput m_limitswitcharriereG = new DigitalInput(kAccumulateurBallonArG);
   private DigitalInput m_limitswitchavantD = new DigitalInput(kAccumulateurBallonAvD);

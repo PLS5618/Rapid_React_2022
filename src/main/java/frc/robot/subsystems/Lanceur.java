@@ -6,13 +6,14 @@ package frc.robot.subsystems;
 
 import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.FeedbackDevice;
-import com.ctre.phoenix.motorcontrol.can.TalonSRX;
+import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
+
 import static frc.robot.Constants.*;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class Lanceur extends SubsystemBase {
-  private TalonSRX m_LancerBallon1 = new TalonSRX(kLancer1);
-  private TalonSRX m_LancerBallon2 = new TalonSRX(kLancer2);
+  private WPI_TalonSRX m_LancerBallon1 = new WPI_TalonSRX(kLancer1);
+  private WPI_TalonSRX m_LancerBallon2 = new WPI_TalonSRX(kLancer2);
   /** Creates a new lanceur. */
   public void lancer(double vitesse ){
     m_LancerBallon1.set (ControlMode.Velocity, vitesse);

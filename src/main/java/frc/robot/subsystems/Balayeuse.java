@@ -5,8 +5,7 @@
 package frc.robot.subsystems;
 
 import com.ctre.phoenix.motorcontrol.ControlMode;
-import com.ctre.phoenix.motorcontrol.can.TalonSRX;
-
+import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import edu.wpi.first.wpilibj.DoubleSolenoid;
@@ -17,9 +16,9 @@ import static frc.robot.Constants.*;
 
 
 public class Balayeuse extends SubsystemBase {
-private TalonSRX m_Tourneshaft = new TalonSRX(kShaftBalayeuse);
-   private DoubleSolenoid  m_pourstartdroit = new DoubleSolenoid(PneumaticsModuleType.CTREPCM, kBalayeusePistonhautd, kBalayeusePistonbasd);
-   private DoubleSolenoid  m_pourstartgauche = new DoubleSolenoid(PneumaticsModuleType.CTREPCM, kBalayeusePistonhautg, kBalayeusePistonbasg);
+  private WPI_TalonSRX m_Tourneshaft = new WPI_TalonSRX(kShaftBalayeuse);
+  private DoubleSolenoid  m_pourstartdroit = new DoubleSolenoid(PneumaticsModuleType.CTREPCM, kBalayeusePistonhautd, kBalayeusePistonbasd);
+  private DoubleSolenoid  m_pourstartgauche = new DoubleSolenoid(PneumaticsModuleType.CTREPCM, kBalayeusePistonhautg, kBalayeusePistonbasg);
   /** Creates a new baleeuse. */
   public void tourneshaft(double vitesse) {
     m_Tourneshaft.set (ControlMode.PercentOutput, vitesse);
