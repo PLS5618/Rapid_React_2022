@@ -30,17 +30,20 @@ public final class Constants {
     // Analog
     public static int kElevateurPotentiometreD = 0;
     public static int kElevateurPotentiometreG = 1;
+    
     // DIO
+    public static int kElevateurlimithautg = 0;
+    public static int kElevateurlimitbasg = 1;
+    public static int kElevateurlimithautd = 2;
+    public static int kElevateurlimitbasd = 3;
+    public static int kAccumulateurBallonAv = 4;
+    public static int kAccumulateurBallonAr = 5;
+
+    //Pistons
     public static int kBalayeusePistonhautd = 0;
     public static int kBalayeusePistonhautg = 1;
     public static int kBalayeusePistonbasd = 2;
     public static int kBalayeusePistonbasg = 3;
-    public static int kAccumulateurBallonAv = 4;
-    public static int kAccumulateurBallonAr = 5;
-    public static int kElevateurlimithautd = 6;
-    public static int kElevateurlimithautg = 7;
-    public static int kElevateurlimitbasd = 8;
-    public static int kElevateurlimitbasg = 9;
 
     
     
