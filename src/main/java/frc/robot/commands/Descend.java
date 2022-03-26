@@ -28,7 +28,7 @@ public class Descend extends CommandBase {
   @Override
   public void execute() {
     if(!m_elevateur.bas())
-    m_elevateur.monteDescendre(SmartDashboard.getNumber("Force Descendre", -0.5));
+      m_elevateur.monteDescendre(SmartDashboard.getNumber("Force Descendre", -0.5));
   }
 
   // Called once the command ends or is interrupted.
@@ -38,6 +38,6 @@ public class Descend extends CommandBase {
   // Returns true when the command should end.
   @Override
   public boolean isFinished() {
-    return m_elevateur.bas();
+    return false;
   }
 }
