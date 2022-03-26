@@ -19,25 +19,38 @@ public class Accumulateur extends SubsystemBase {
   /** Creates a new Accumulateur. */
   private WPI_TalonSRX m_shaftavant = new WPI_TalonSRX(kAccumulateurShaftAv);
   private WPI_TalonSRX m_shaftarriere = new WPI_TalonSRX(kAccumulateurShaftAr);
-  private DigitalInput m_limitswitchavantG = new DigitalInput(kAccumulateurBallonAvG);
-  private DigitalInput m_limitswitcharriereG = new DigitalInput(kAccumulateurBallonArG);
-  private DigitalInput m_limitswitchavantD = new DigitalInput(kAccumulateurBallonAvD);
-  private DigitalInput m_limitswitcharriereD = new DigitalInput(kAccumulateurBallonArD);
+  private DigitalInput m_limitswitchavant = new DigitalInput(kAccumulateurBallonAv);
+  private DigitalInput m_limitswitcharriere = new DigitalInput(kAccumulateurBallonAr);
 
 
   public void tournerAvant() {
     double spd = SmartDashboard.getNumber("Ballon qui rentre", 0.5);
-    m_shaftavant.set (ControlMode.PercentOutput, spd);
+    m_shaftavant.set(spd);
   }
+
+  public void stopAvant() {
+    m_shaftavant.set(0);
+  }
+
   public void tournerArriere() {
     double spd = SmartDashboard.getNumber("Ballon qui rentre", 0.5);
-    m_shaftarriere.set (ControlMode.PercentOutput, spd);
+    m_shaftarriere.set(spd);
   }
+
+  public void stopArriere() {
+    m_shaftarriere.set(0);
+  }
+
   public boolean ballonAvant(){
-   return m_limitswitchavantG.get() || m_limitswitchavantD.get();
+   return m_limitswitchavant.get();
   } 
   public boolean ballonArriere(){
-    return m_limitswitcharriereG.get() || m_limitswitcharriereD.get();
+    return m_limitswitcharriere.get();
+  }
+
+  public void stop() {
+    m_shaftarriere.set(ControlMode.PercentOutput, 0);
+    m_shaftavant.set(ControlMode.PercentOutput, 0);
   }
   @Override
   public void periodic() {
