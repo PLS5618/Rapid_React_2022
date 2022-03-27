@@ -42,10 +42,10 @@ public class Accumulateur extends SubsystemBase {
   }
 
   public boolean ballonAvant(){
-   return !m_limitswitchavant.get();
+   return m_limitswitchavant.get();
   } 
   public boolean ballonArriere(){
-    return !m_limitswitcharriere.get();
+    return m_limitswitcharriere.get();
   }
 
   public void stop() {

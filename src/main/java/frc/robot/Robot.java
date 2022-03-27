@@ -37,6 +37,7 @@ public class Robot extends TimedRobot {
     SmartDashboard.putNumber("Force Lanceur", 1000);
     SmartDashboard.putNumber("Force Monter", 0.2);
     SmartDashboard.putNumber("Distance Encodeur", 0);
+    
   }
 
   /**
