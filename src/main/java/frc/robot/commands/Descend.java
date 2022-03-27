@@ -28,7 +28,7 @@ public class Descend extends CommandBase {
   @Override
   public void execute() {
     if(!m_elevateur.bas())
-      m_elevateur.monteDescendre(SmartDashboard.getNumber("Force Descendre", -0.5));
+      m_elevateur.monteDescendre(SmartDashboard.getNumber("Force Descendre", -0.2));
     else 
       m_elevateur.monteDescendre(0);
   }

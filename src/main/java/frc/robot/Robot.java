@@ -6,6 +6,7 @@ package frc.robot;
 
 import edu.wpi.first.cameraserver.CameraServer;
 import edu.wpi.first.wpilibj.TimedRobot;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
 
@@ -30,6 +31,12 @@ public class Robot extends TimedRobot {
     // autonomous chooser on the dashboard.
     m_robotContainer = new RobotContainer();
     CameraServer.startAutomaticCapture();
+    SmartDashboard.putNumber("Ballon qui rentre", 0.5);
+    SmartDashboard.putNumber("Shaft Tourne", 0.5);
+    SmartDashboard.putNumber("Force Descendre", -0.2);
+    SmartDashboard.putNumber("Force Lanceur", 1000);
+    SmartDashboard.putNumber("Force Monter", 0.2);
+    SmartDashboard.putNumber("Distance Encodeur", 0);
   }
 
   /**

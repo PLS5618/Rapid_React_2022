@@ -30,7 +30,7 @@ public class Monte extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    m_elevateur.monteDescendre(SmartDashboard.getNumber("Force Monter", 0.5));
+    m_elevateur.monteDescendre(SmartDashboard.getNumber("Force Monter", 0.2));
   }
 
   // Called once the command ends or is interrupted.

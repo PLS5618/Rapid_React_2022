@@ -30,7 +30,9 @@ public class Balayeuse extends SubsystemBase {
     m_pourstart.set(Value.kForward);
 
   }
-  public Balayeuse() {}
+  public Balayeuse() {
+    monter();
+  }
 
   @Override
   public void periodic() {
