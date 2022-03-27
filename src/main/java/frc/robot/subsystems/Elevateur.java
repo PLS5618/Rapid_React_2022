@@ -29,28 +29,56 @@ public class Elevateur extends SubsystemBase {
   private DigitalInput m_limitbasg = new DigitalInput(kElevateurlimitbasg);
   
   // function
-  public void monteDescendre(double vitesse) {
+  public void monteDescendredroit(double vitesse) {
     m_matd.set (vitesse);
+  }
+  public void monteDescendregauche(double vitesse) {
     m_matg.set (vitesse);
   }
-  public boolean haut(){
-    return !m_limithautd.get() ||  !m_limithautg.get();
+  public boolean hautd(){
+    return m_limithautd.get();
+  }
+  
+  public boolean hautg(){
+    return m_limithautg.get();
   }
 
-  public boolean bas(){
-    return !m_limitbasd.get() || !m_limitbasg.get();
+  public boolean basd(){
+    return m_limitbasd.get();
   }
-  public double hauteur(){
-  return (potentiometreDroit.get () + potentiometreGauche.get())/2;
+  public boolean basg(){
+    return m_limitbasg.get();
+  }
+  public double hauteurg(){
+    return m_matg.getEncoder().getPosition();
+  }
+  public double hauteurd(){
+    return m_matd.getEncoder().getPosition();
+  }
+
+  public void resetEncodeurd() {
+    m_matd.getEncoder().setPosition(0);
+  }
+  public void resetEncodeurg() {
+    m_matg.getEncoder().setPosition(0);
   }
 
 
   @Override
   public void periodic() {
-    SmartDashboard.putBoolean("limithautd", !m_limithautd.get());
-    SmartDashboard.putBoolean("limithautg", !m_limithautg.get());
-    SmartDashboard.putBoolean("limitbasd", !m_limitbasd.get());
-    SmartDashboard.putBoolean("limitbasg", !m_limitbasg.get());
+    SmartDashboard.putBoolean("limithautd", m_limithautd.get());
+    SmartDashboard.putBoolean("limithautg", m_limithautg.get());
+    SmartDashboard.putBoolean("limitbasd", m_limitbasd.get());
+    SmartDashboard.putBoolean("limitbasg", m_limitbasg.get());
+    SmartDashboard.putNumber("hauteur elevateur gauche", hauteurg());
+    SmartDashboard.putNumber("hauteur elevateur droit", hauteurd());
+    if (basd()) {
+      resetEncodeurd();
+      
+    }
+    if (basg()) {
+      resetEncodeurg();
+    }
     // This method will be called once per scheduler run
   }
 }

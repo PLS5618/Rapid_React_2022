@@ -36,7 +36,7 @@ public class Lancer extends CommandBase {
   public void execute() {
     double vitesse = SmartDashboard.getNumber("Force Lanceur", 1000);
     m_lanceur.lancer(vitesse);
-    if (m_lanceur.Vitesse() > vitesse - 500) {
+    if (m_lanceur.Vitesse() > vitesse ) {
       m_accumulateur.tournerAvant();
       m_accumulateur.tournerArriere();
     } else {

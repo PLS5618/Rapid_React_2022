@@ -76,7 +76,7 @@
     }
   },
   "NetworkTables": {
-    "LiveWindow": {
+    "SmartDashboard": {
       "open": true
     }
   }

@@ -102,7 +102,7 @@ public class RobotContainer {
     // An ExampleCommand will run in autonomous
     SmartDashboard.getString("auto", "aucun");
     return new SequentialCommandGroup(
-      new Lancer(m_Lanceur, m_Accumulateur).withTimeout(7),
+      new Lancer(m_Lanceur, m_Accumulateur).withTimeout(SmartDashboard.getNumber("temps lancer auto", 5)),
       new Reculer(m_DriveTrain)
     );
   }

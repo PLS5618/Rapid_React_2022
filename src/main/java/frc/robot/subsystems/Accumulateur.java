@@ -25,7 +25,7 @@ public class Accumulateur extends SubsystemBase {
 
   public void tournerAvant() {
     double spd = SmartDashboard.getNumber("Ballon qui rentre", 0.5);
-    m_shaftavant.set(spd);
+    m_shaftavant.set(-spd);
   }
 
   public void stopAvant() {

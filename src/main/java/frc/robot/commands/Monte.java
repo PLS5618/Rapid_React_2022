@@ -30,13 +30,29 @@ public class Monte extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    m_elevateur.monteDescendre(SmartDashboard.getNumber("Force Monter", 0.2));
+    double hauteur = 0;
+    if(m_barre == Barre.kBarre1)
+      hauteur = SmartDashboard.getNumber("position barre1", 0);
+    else if (m_barre == Barre.kBarre2)
+      hauteur = SmartDashboard.getNumber("position barre2", 0);
+
+    if(m_elevateur.hauteurd() <= hauteur && !m_elevateur.hautd()) 
+      m_elevateur.monteDescendredroit(SmartDashboard.getNumber("Force Monter gauche", 0.1));
+    else 
+      m_elevateur.monteDescendredroit(0);
+    
+    if (m_elevateur.hauteurg() <= hauteur && !m_elevateur.hautg())
+      m_elevateur.monteDescendregauche(SmartDashboard.getNumber("Force Monter droit", 0.1));
+    else
+      m_elevateur.monteDescendregauche(0);
+
   }
 
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {
-    m_elevateur.monteDescendre(0);
+    m_elevateur.monteDescendredroit(0);
+    m_elevateur.monteDescendregauche(0);
   }
 
   // Returns true when the command should end.
@@ -47,6 +63,6 @@ public class Monte extends CommandBase {
       hauteur = SmartDashboard.getNumber("position barre1", 0);
     else if (m_barre == Barre.kBarre2)
       hauteur = SmartDashboard.getNumber("position barre2", 0);
-    return m_elevateur.haut() || m_elevateur.hauteur() > hauteur;
+    return (m_elevateur.hautd() || m_elevateur.hauteurd() > hauteur) && (m_elevateur.hautg() || m_elevateur.hauteurg() > hauteur);
   }
 }

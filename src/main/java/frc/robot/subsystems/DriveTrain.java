@@ -30,9 +30,9 @@ public class DriveTrain extends SubsystemBase {
   }
 
   public double Distance() {
-    return (m_avantdroit.getEncoder().getPosition()
+    return (-m_avantdroit.getEncoder().getPosition()
     + m_avantgauche.getEncoder().getPosition()
-    + m_arrieredroit.getEncoder().getPosition()
+    - m_arrieredroit.getEncoder().getPosition()
     + m_arrieregauche.getEncoder().getPosition()) / 4;
   } 
 
@@ -50,7 +50,7 @@ public class DriveTrain extends SubsystemBase {
 
   @Override
   public void periodic() {
-    SmartDashboard.putNumber("Distance", 0.5);
+    SmartDashboard.putNumber("Distance", Distance());
     // This method will be called once per scheduler run
   }
 

@@ -31,13 +31,19 @@ public class Robot extends TimedRobot {
     // autonomous chooser on the dashboard.
     m_robotContainer = new RobotContainer();
     CameraServer.startAutomaticCapture();
-    SmartDashboard.putNumber("Ballon qui rentre", 0.5);
+    SmartDashboard.putNumber("Ballon qui rentre", 0.3);
     SmartDashboard.putNumber("Shaft Tourne", 0.5);
-    SmartDashboard.putNumber("Force Descendre", -0.2);
+    SmartDashboard.putNumber("Force Descendre droit", -0.2);
+    SmartDashboard.putNumber("Force Descendre gauche", -0.25);
     SmartDashboard.putNumber("Force Lanceur", 1000);
-    SmartDashboard.putNumber("Force Monter", 0.2);
-    SmartDashboard.putNumber("Distance Encodeur", 0);
-    
+    SmartDashboard.putNumber("Force Monter droit", 0.2);
+    SmartDashboard.putNumber("Force Monter gauche", 0.2);
+    SmartDashboard.putNumber("Distance auto", -32);
+    SmartDashboard.putNumber("position barre1", 135);
+    SmartDashboard.putNumber("position barre2", 135);
+    SmartDashboard.putNumber("vitesse auto", -0.3);
+    SmartDashboard.putNumber("temps lancer auto", 5);
+
   }
 
   /**

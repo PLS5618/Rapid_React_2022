@@ -27,16 +27,22 @@ public class Descend extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    if(!m_elevateur.bas())
-      m_elevateur.monteDescendre(SmartDashboard.getNumber("Force Descendre", -0.2));
+    if(!m_elevateur.basd())
+      m_elevateur.monteDescendredroit(SmartDashboard.getNumber("Force Descendre droit", -0.1));
     else 
-      m_elevateur.monteDescendre(0);
+      m_elevateur.monteDescendredroit(0);
+    if(!m_elevateur.basg())
+      m_elevateur.monteDescendregauche(SmartDashboard.getNumber("Force Descendre gauche", -0.1));
+    else 
+      m_elevateur.monteDescendregauche(0);
+      
   }
 
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {
-    m_elevateur.monteDescendre(0);
+    m_elevateur.monteDescendredroit(0);
+    m_elevateur.monteDescendregauche(0);
   }
 
   // Returns true when the command should end.

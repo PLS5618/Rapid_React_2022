@@ -30,7 +30,7 @@ public class Reculer extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    m_driveTrain.Drive(0.5, 0);
+    m_driveTrain.Drive(SmartDashboard.getNumber("vitesse auto", -0.3), 0);
   }
 
 
@@ -43,6 +43,6 @@ public class Reculer extends CommandBase {
   // Returns true when the command should end.
   @Override
   public boolean isFinished() {
-    return m_driveTrain.Distance() > SmartDashboard.getNumber("Distance Encodeur", 0);
+    return m_driveTrain.Distance() < SmartDashboard.getNumber("Distance auto", 0);
   }
 }
