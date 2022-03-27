@@ -15,17 +15,17 @@ package frc.robot;
  */
 public final class Constants {
     // CAN
-    public static int kShaftBalayeuse = 1;
-    public static int kAccumulateurShaftAv = 2;
-    public static int kAccumulateurShaftAr = 3;
-    public static int kDriveTrainAvDr = 4;
-    public static int kDriveTrainAvGa = 5;
-    public static int kDriveTrainArDr = 6;
-    public static int kDriveTrainArGa = 7;
-    public static int kElevateurMoteur1 = 8;
-    public static int kElevateurMoteur2 = 9;
-    public static int kLancer1 = 10;
-    public static int kLancer2 = 11;
+    public static int kShaftBalayeuse = 10;
+    public static int kAccumulateurShaftAv = 11;
+    public static int kAccumulateurShaftAr = 4;
+    public static int kDriveTrainAvDr = 2;
+    public static int kDriveTrainAvGa = 8;
+    public static int kDriveTrainArDr = 3;
+    public static int kDriveTrainArGa = 9;
+    public static int kElevateurMoteurd = 1;
+    public static int kElevateurMoteurg = 7;
+    public static int kLancer1 = 6;
+    public static int kLancer2 = 5;
 
     // Analog
     public static int kElevateurPotentiometreD = 1;
