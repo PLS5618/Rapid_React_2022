@@ -17,20 +17,18 @@ import static frc.robot.Constants.*;
 
 public class Balayeuse extends SubsystemBase {
   private WPI_TalonSRX m_Tourneshaft = new WPI_TalonSRX(kShaftBalayeuse);
-  private DoubleSolenoid  m_pourstartdroit = new DoubleSolenoid(PneumaticsModuleType.CTREPCM, kBalayeusePistonhautd, kBalayeusePistonbasd);
-  private DoubleSolenoid  m_pourstartgauche = new DoubleSolenoid(PneumaticsModuleType.CTREPCM, kBalayeusePistonhautg, kBalayeusePistonbasg);
+  private DoubleSolenoid  m_pourstart = new DoubleSolenoid(PneumaticsModuleType.CTREPCM, kBalayeusePistonhaut, kBalayeusePistonbas);
   /** Creates a new baleeuse. */
   public void tourneshaft(double vitesse) {
     m_Tourneshaft.set (ControlMode.PercentOutput, vitesse);
   }
   public void monter() {
-    m_pourstartdroit.set(Value.kReverse);
-    m_pourstartgauche.set(Value.kReverse);
+    m_pourstart.set(Value.kReverse);
     
   }
   public void decendre() {
-    m_pourstartdroit.set(Value.kForward);
-    m_pourstartgauche.set(Value.kForward);
+    m_pourstart.set(Value.kForward);
+
   }
   public Balayeuse() {}
 

@@ -28,8 +28,8 @@ public final class Constants {
     public static int kLancer2 = 11;
 
     // Analog
-    public static int kElevateurPotentiometreD = 0;
-    public static int kElevateurPotentiometreG = 1;
+    public static int kElevateurPotentiometreD = 1;
+    public static int kElevateurPotentiometreG = 0;
     
     // DIO
     public static int kElevateurlimithautg = 0;
@@ -40,10 +40,9 @@ public final class Constants {
     public static int kAccumulateurBallonAr = 5;
 
     //Pistons
-    public static int kBalayeusePistonhautd = 0;
-    public static int kBalayeusePistonhautg = 1;
-    public static int kBalayeusePistonbasd = 2;
-    public static int kBalayeusePistonbasg = 3;
+    public static int kBalayeusePistonhaut = 0;
+    public static int kBalayeusePistonbas = 1;
+
 
     
     
