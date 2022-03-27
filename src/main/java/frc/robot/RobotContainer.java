@@ -66,7 +66,7 @@ public class RobotContainer {
         new Runnable() {
           @Override
           public void run() {
-            m_DriveTrain.Drive(m_Controller.getLeftY(), m_Controller.getLeftX());
+            m_DriveTrain.Drive(-m_Controller.getLeftY(), m_Controller.getLeftX());
           }
         }, m_DriveTrain)
     );

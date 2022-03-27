@@ -44,7 +44,9 @@ public class DriveTrain extends SubsystemBase {
   }
 
   /** Creates a new DriveTrain. */
-  public DriveTrain() {}
+  public DriveTrain() {
+    m_droit.setInverted(true);
+  }
 
   @Override
   public void periodic() {
