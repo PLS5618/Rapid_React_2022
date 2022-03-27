@@ -16,9 +16,11 @@ public class Lanceur extends SubsystemBase {
   private WPI_TalonSRX m_LancerBallon2 = new WPI_TalonSRX(kLancer2);
   /** Creates a new lanceur. */
   public void lancer(double vitesse ){
-    m_LancerBallon1.set (ControlMode.Velocity, vitesse);
-    
-     
+    m_LancerBallon1.set (ControlMode.Velocity, vitesse); 
+  }
+
+  public void stop() {
+    m_LancerBallon1.set(ControlMode.PercentOutput, 0);
   }
 
   public void setPID(double p, double i, double d){

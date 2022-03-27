@@ -39,13 +39,17 @@ public class Lancer extends CommandBase {
     if (m_lanceur.Vitesse() > vitesse - 500) {
       m_accumulateur.tournerAvant();
       m_accumulateur.tournerArriere();
-
+    } else {
+      m_accumulateur.stop();
     }
   }
   
   // Called once the command ends or is interrupted.
   @Override
-  public void end(boolean interrupted) {}
+  public void end(boolean interrupted) {
+    m_lanceur.stop();
+    m_accumulateur.stop();
+  }
 
   // Returns true when the command should end.
   @Override
