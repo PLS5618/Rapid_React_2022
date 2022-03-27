@@ -34,11 +34,11 @@ public class Elevateur extends SubsystemBase {
     m_mat2.set (vitesse);
   }
   public boolean haut(){
-    return m_limithautd.get() ||  m_limithautg.get();
+    return !m_limithautd.get() ||  !m_limithautg.get();
   }
 
   public boolean bas(){
-    return m_limitbasd.get() || m_limitbasg.get();
+    return !m_limitbasd.get() || !m_limitbasg.get();
   }
   public double hauteur(){
   return (potentiometreDroit.get () + potentiometreGauche.get())/2;
@@ -47,10 +47,10 @@ public class Elevateur extends SubsystemBase {
 
   @Override
   public void periodic() {
-    SmartDashboard.putBoolean("limithautd", m_limithautd.get());
-    SmartDashboard.putBoolean("limithautg", m_limithautg.get());
-    SmartDashboard.putBoolean("limitbasd", m_limitbasd.get());
-    SmartDashboard.putBoolean("limitbasg", m_limitbasg.get());
+    SmartDashboard.putBoolean("limithautd", !m_limithautd.get());
+    SmartDashboard.putBoolean("limithautg", !m_limithautg.get());
+    SmartDashboard.putBoolean("limitbasd", !m_limitbasd.get());
+    SmartDashboard.putBoolean("limitbasg", !m_limitbasg.get());
     // This method will be called once per scheduler run
   }
 }
